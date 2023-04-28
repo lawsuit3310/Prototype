@@ -6,20 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/UnityTechnologies/Playground/Examples/Maze/MazeLevel0.unity
-    guid: 029e597475c3944a5b42678232c2822b
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/UnityTechnologies/Playground/Examples/Maze/MazeLevel1.unity
-    guid: f9b71d909be1c4e9dbb8b3599d76b33c
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/UnityTechnologies/Playground/Examples/Adventure/Adventure.unity
     guid: f723b1979947445779b87ef7a1089a32
   - enabled: 0
-    path: Assets/UnityTechnologies/Playground/Examples/Football/Football.unity
-    guid: 8b655b0fb8d8c4758a154fd99dc41447
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/UnityTechnologies/Playground/Examples/Lander/Lander.unity
-    guid: 3925160d1efe749d5a026cbf18c60f83
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/UnityTechnologies/Playground/Examples/Roguelike/Roguelike.unity
     guid: ad15a26015e49439387b05c22fe7a962
@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Adventure.unity
+    guid: 9ab42dd7f7c25f4409c48f4e3d229a27
   m_configObjects: {}

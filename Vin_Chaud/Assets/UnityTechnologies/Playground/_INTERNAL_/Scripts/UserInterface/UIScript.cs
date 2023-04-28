@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [AddComponentMenu("")]
@@ -29,7 +30,12 @@ public class UIScript : MonoBehaviour
 	private int[] scores = new int[2];
 	private int[] playersHealth = new int[2];
 	private Dictionary<int, ResourceStruct> resourcesDict = new Dictionary<int, ResourceStruct>(); //holds a reference to all the resources collected, and to their UI
+    [HideInInspector]
     private bool gameOver = false; //this gets changed when the game is won OR lost
+
+    [HideInInspector]
+    public static bool stopGame = false;
+    //게임이 끝났을 경우, 즉 이기거나 졌을 경우 true로 변경
 
 
 	private void Start()
@@ -117,12 +123,15 @@ public class UIScript : MonoBehaviour
 
 
 
+    
+    // 게임 오버 되었을 경우
 	public void GameOver(int playerNumber)
 	{
         // only set game over UI if game is not over
 	    if (!gameOver)
 	    {
-			gameOver = true;
+            gameOver = true;
+            stopGame = true;
 	        statsPanel.SetActive(false);
 	        gameOverPanel.SetActive(true);
 	    }

@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 
 [AddComponentMenu("Playground/Movement/Move With Arrows")]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -18,12 +20,18 @@ public class Move : Physics2DObject
 	// The direction that will face the player
 	public Enums.Directions lookAxis = Enums.Directions.Up;
 
-	private Vector2 movement, cachedDirection;
+    private Vector2 movement, cachedDirection;
+    private static Vector2 LastDirection;
+    private SpriteRenderer _spriteRenderer;
 	private float moveHorizontal;
 	private float moveVertical;
 
+    private void Start()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
-	// Update gets called every frame
+    // Update gets called every frame
 	void Update ()
 	{	
 		// Moving with the arrow keys
@@ -58,11 +66,12 @@ public class Move : Physics2DObject
 		{
 			if(movement.sqrMagnitude >= 0.01f)
 			{
-				cachedDirection = movement;
+				cachedDirection = movement;;
+                LastDirection = cachedDirection;
 			}
 			Utils.SetAxisTowards(lookAxis, transform, cachedDirection);
 		}
-	}
+    }
 
 
 
@@ -71,5 +80,15 @@ public class Move : Physics2DObject
 	{
 		// Apply the force to the Rigidbody2d
 		rigidbody2D.AddForce(movement * speed * 10f);
-	}
+        transform.localScale = new Vector3(
+            Mathf.Abs(transform.localScale.x)* 
+            this.rigidbody2D.velocity.x < 0 ? -0.5f : 0.5f ,
+            transform.localScale.y,transform.localScale.z
+            );
+    }
+
+    public static Vector2 GetLastDirection()
+    {
+        return LastDirection;
+    }
 }

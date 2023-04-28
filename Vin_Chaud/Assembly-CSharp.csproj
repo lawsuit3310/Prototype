@@ -41,6 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\RestartGame.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Attributes\BulletAttribute.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\ConditionKeyPress.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts\UserInterface\BalloonScript.cs" />
@@ -83,7 +84,9 @@
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\Actions\CreateObjectAction.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Attributes\ResourceAttribute.cs" />
+     <Compile Include="Assets\Scripts\MonsterSpawner.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Attributes\HealthSystemAttribute.cs" />
+     <Compile Include="Assets\Scripts\EnemyHealthSystemAttribute.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts\Gameplay" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\mergetool.ja.txt" />
@@ -222,6 +225,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\semantic.ko.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
      <None Include="Library\PackageCache\com.unity.toolchain.win-x86_64-linux-x86_64@2.0.4\ValidationConfig.json" />
+     <Folder Include="Assets\UnityTechnologies\Playground\Images\FloorTiles\Materials" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\workspaceserver.en.txt" />
      <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.17\ValidationExceptions.json" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\cm-help.zh-Hant.txt" />

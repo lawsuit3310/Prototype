@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 
 [AddComponentMenu("Playground/Movement/Follow Target")]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -17,15 +19,21 @@ public class FollowTarget : Physics2DObject
 
 	// The direction that will face the target
 	public Enums.Directions useSide = Enums.Directions.Up;
-	
-	// FixedUpdate is called once per frame
+
+    void Start()
+    {
+        target = GameObject.FindWithTag("Player").GetComponent<Transform>();
+    }
+
+    // FixedUpdate is called once per frame
 	void FixedUpdate ()
 	{
 		//do nothing if the target hasn't been assigned or it was detroyed for some reason
-		if(target == null)
-			return;
+        if (target.Equals(null))
+            return;
 
-		//look towards the target
+
+        //look towards the target
 		if(lookAtTarget)
 		{
 			Utils.SetAxisTowards(useSide, transform, target.position - transform.position);
@@ -35,4 +43,11 @@ public class FollowTarget : Physics2DObject
 		rigidbody2D.MovePosition(Vector2.Lerp(transform.position, target.position, Time.fixedDeltaTime * speed));
 
 	}
+
+    private void OnEnable()
+    {
+        this.transform.position = new Vector2(
+            UnityEngine.Random.Range(-16f, 14f), UnityEngine.Random.Range(-11f, 15f)
+        );
+    }
 }
