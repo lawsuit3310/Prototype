@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -37,8 +38,13 @@ public class UIScript : MonoBehaviour
     public static bool stopGame = false;
     //게임이 끝났을 경우, 즉 이기거나 졌을 경우 true로 변경
 
+    private void Awake()
+    {
+        Data.ParsingData();
+        stopGame = false;
+    }
 
-	private void Start()
+    private void Start()
 	{
 		if(numberOfPlayers == Players.OnePlayer)
 		{
@@ -63,7 +69,7 @@ public class UIScript : MonoBehaviour
 				// Life will be provided by the PlayerHealth components
 			}
 		}
-	}
+    }
 
 	//version of the one below with one parameter to be able to connect UnityEvents
 	public void AddOnePoint(int playerNumber)
@@ -115,6 +121,7 @@ public class UIScript : MonoBehaviour
 	    if (!gameOver)
 	    {
 			gameOver = true;
+            stopGame = true;
 			winLabel.text = "Player " + ++playerNumber + " wins!";
 			statsPanel.SetActive(false);
 			winPanel.SetActive(true);

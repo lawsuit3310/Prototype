@@ -41,7 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\RestartGame.cs" />
+     <Compile Include="Assets\Scripts\Components\RestartGame.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Attributes\BulletAttribute.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\ConditionKeyPress.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts\UserInterface\BalloonScript.cs" />
@@ -72,7 +72,7 @@
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\Actions\ConsumeResourceAction.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts\UserInterface\UIItemScript.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts\BaseClasses\ConditionBase.cs" />
-     <Compile Include="Assets\Scripts\SceneController.cs" />
+     <Compile Include="Assets\Scripts\Components\SceneController.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\Actions\DialogueBalloonAction.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts\BaseClasses\Physics2DObject.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Attributes\CollectableAttribute.cs" />
@@ -82,11 +82,15 @@
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Movement\Push.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\ConditionArea.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\Actions\CreateObjectAction.cs" />
-     <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Components\GameManager.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Attributes\ResourceAttribute.cs" />
-     <Compile Include="Assets\Scripts\MonsterSpawner.cs" />
+     <Compile Include="Assets\Scripts\Components\MonsterSpawner.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Attributes\HealthSystemAttribute.cs" />
-     <Compile Include="Assets\Scripts\EnemyHealthSystemAttribute.cs" />
+     <Compile Include="Assets\Scripts\Components\EnemyHealthSystemAttribute.cs" />
+     <Compile Include="Assets\Scripts\Data\Data.cs" />
+     <Compile Include="Assets\Scripts\Components\Behavior\BeeBehavior.cs" />
+     <Compile Include="Assets\Scripts\Components\Behavior\OrcBehavior.cs" />
+     <Compile Include="Assets\Scripts\Components\Behavior\AlienBehavior.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts\Gameplay" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\mergetool.ja.txt" />
@@ -96,6 +100,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\guihelp.zh-Hant.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Library\PackageCache\com.unity.test-framework@1.1.31" />
+     <None Include="Assets\Packages\Newtonsoft.Json.13.0.3\lib\netstandard2.0\Newtonsoft.Json.xml" />
      <Folder Include="Library\PackageCache\com.unity.sysroot@2.0.5" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\plastic-gui.zh-Hant.txt" />
@@ -106,9 +111,11 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\differences.es.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\commontypes.zh-Hans.txt" />
      <Folder Include="Library\PackageCache\com.unity.sysroot@2.0.5\Tests" />
+     <Folder Include="Assets\Packages\YamlDotNet.13.1.0\lib" />
      <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\mergetool.es.txt" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\Projectiles" />
+     <Folder Include="Assets\Packages\Newtonsoft.Json.13.0.3\lib\netstandard2.0" />
      <Folder Include="Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator" />
      <None Include="Library\PackageCache\com.unity.ext.nunit@1.0.6\package.json" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\basecommands.es.txt" />
@@ -134,8 +141,10 @@
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts\Attributes" />
      <None Include="Library\PackageCache\com.unity.timeline@1.6.4\package.json" />
      <Folder Include="Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom" />
+     <Folder Include="Assets\Scripts\Components" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\configurehelper.en.txt" />
      <None Include="Library\PackageCache\com.unity.toolchain.win-x86_64-linux-x86_64@2.0.4\package.json" />
+     <Folder Include="Assets\Packages\YamlDotNet.13.1.0\lib\netstandard2.1" />
      <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.8.0" />
      <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.17\ValidationConfig.json" />
@@ -158,8 +167,11 @@
      <None Include="Library\PackageCache\com.unity.visualscripting@1.8.0\package.json" />
      <None Include="Library\PackageCache\com.unity.editorcoroutines@1.0.0\package.json" />
      <None Include="Library\PackageCache\com.unity.timeline@1.6.4\ValidationExceptions.json" />
+     <None Include="Assets\Packages\YamlDotNet.13.1.0\LICENSE.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\package.json" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\xdiff.zh-Hans.txt" />
+     <Folder Include="Assets\Packages" />
+     <Folder Include="Assets\Packages\YamlDotNet.13.1.0" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\xdiff.ko.txt" />
      <Folder Include="Library\PackageCache\com.unity.timeline@1.6.4" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\clientcommon.ja.txt" />
@@ -192,6 +204,7 @@
      <Folder Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts\Utilities" />
      <Folder Include="Assets\UnityTechnologies" />
      <None Include="Library\PackageCache\com.unity.test-framework@1.1.31\package.json" />
+     <Folder Include="Assets\Prefabs" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Scripts" />
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\basecommands.en.txt" />
@@ -200,6 +213,7 @@
      <Folder Include="Library\PackageCache\com.unity.testtools.codecoverage@1.2.2" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\images.ko.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\workspaceserver.es.txt" />
+     <Folder Include="Assets\Scripts\Components\Behavior" />
      <None Include="Library\PackageCache\com.unity.performance.profile-analyzer@1.2.2\package.json" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\Character\Bodies" />
      <Folder Include="Library\PackageCache\com.unity.toolchain.win-x86_64-linux-x86_64@2.0.4\Tests" />
@@ -214,6 +228,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\differences.zh-Hans.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\binmergetool.en.txt" />
+     <None Include="Assets\Packages\YamlDotNet.13.1.0\lib\netstandard2.1\YamlDotNet.xml" />
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts\Movement" />
      <None Include="Library\PackageCache\com.unity.visualscripting@1.8.0\ValidationExceptions.json" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -234,6 +249,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\xdiff.zh-Hant.txt" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Textures" />
+     <None Include="Assets\Scripts\Data\VSurvLikeData.json" />
      <Folder Include="Library\PackageCache\com.unity.editorcoroutines@1.0.0" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\i3.zh-Hant.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\cm.ko.txt" />
@@ -249,6 +265,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\cm-help.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\clientcommon.en.txt" />
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@2.0.1" />
+     <Folder Include="Assets\Scripts\Saves" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\binmergetool.zh-Hans.txt" />
      <Folder Include="Library\PackageCache\com.unity.toolchain.win-x86_64-linux-x86_64@2.0.4" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\i3.es.txt" />
@@ -296,18 +313,22 @@
      <Folder Include="Assets\UnityTechnologies\Playground\Images\GeometricShapes" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Shaders" />
      <Folder Include="Library\PackageCache\com.unity.settings-manager@1.0.3\Content" />
+     <Folder Include="Assets\Packages\Newtonsoft.Json.13.0.3" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\commontypes.ko.txt" />
      <Folder Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\Creatures" />
      <Folder Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.17" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <Folder Include="Assets\Scripts\Data" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\commontypes.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\configurehelper.ko.txt" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\PackageConversionData_Assets.json" />
+     <Folder Include="Assets\Packages\Newtonsoft.Json.13.0.3\lib" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\Actions" />
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor" />
+     <Folder Include="Assets\Packages\YamlDotNet.13.1.0\images" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Package Resources" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts" />
@@ -593,6 +614,12 @@
      </Reference>
      <Reference Include="ReportGeneratorMerged">
      <HintPath>C:\Users\Public\Documents\GitHub\Prototype\Vin_Chaud\Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+     </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>C:\Users\Public\Documents\GitHub\Prototype\Vin_Chaud\Assets\Packages\Newtonsoft.Json.13.0.3\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="YamlDotNet">
+     <HintPath>C:\Users\Public\Documents\GitHub\Prototype\Vin_Chaud\Assets\Packages\YamlDotNet.13.1.0\lib\netstandard2.1\YamlDotNet.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.20f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

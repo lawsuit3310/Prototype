@@ -409,6 +409,12 @@
      <Reference Include="NugetForUnity">
      <HintPath>C:\Users\Public\Documents\GitHub\Prototype\Vin_Chaud\Assets\NuGet\Editor\NugetForUnity.dll</HintPath>
      </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>C:\Users\Public\Documents\GitHub\Prototype\Vin_Chaud\Assets\Packages\Newtonsoft.Json.13.0.3\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="YamlDotNet">
+     <HintPath>C:\Users\Public\Documents\GitHub\Prototype\Vin_Chaud\Assets\Packages\YamlDotNet.13.1.0\lib\netstandard2.1\YamlDotNet.dll</HintPath>
+     </Reference>
      <Reference Include="nunit.framework">
      <HintPath>C:\Users\Public\Documents\GitHub\Prototype\Vin_Chaud\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
      </Reference>
