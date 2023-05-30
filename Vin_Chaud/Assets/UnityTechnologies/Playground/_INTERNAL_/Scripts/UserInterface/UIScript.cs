@@ -154,7 +154,8 @@ public class UIScript : MonoBehaviour
 
 
 	public void SetHealth(int amount, int playerNumber)
-	{
+    {
+        if(SceneManager.GetActiveScene().name != "Adventure") return;
 		playersHealth[playerNumber] = amount;
 		numberLabels[playerNumber].text = playersHealth[playerNumber].ToString();
 	}

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class GroceryUI : MonoBehaviour
 {
+    public GameObject storePanel;
     public static void UpdateGroceryUI(TMP_Text[] groceryAmountText, GroceryDataHandler _groceryDataHandler)
     {
         var inventory = GameManager.GetInventory();
@@ -19,9 +20,14 @@ public class GroceryUI : MonoBehaviour
         }
     }
 
+    public void ShowStorePanel()
+    {
+        storePanel.SetActive(true);
+    }
+
     public void CloseStorePanel()
     {
-        EventSystem.current.currentSelectedGameObject.transform.parent.gameObject.SetActive(false);
+        storePanel.SetActive(false);
     }
 
     public void UpgradeHP() { GameManager.RenewalStatus(StatusKeys.HP);}

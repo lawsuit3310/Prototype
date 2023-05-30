@@ -12,14 +12,18 @@ TagManager:
   - SCENEMOVE
   - STOREUI
   - SCROLLPARENT
+  - INTERACT
+  - GROCERYMANAGER
+  - FLOOR
+  - BACKGROUND
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PLAYER
   - Water
   - UI
-  - 
+  - INTERACTION
   - 
   - 
   - 

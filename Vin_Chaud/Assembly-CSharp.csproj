@@ -68,7 +68,7 @@
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Movement\Move.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Movement\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Components\Behavior\IEnemyBehavior.cs" />
-     <Compile Include="Assets\Low_Swordman\Demo\Scripts\GroundSensor.cs" />
+     <Compile Include="Assets\External\Low_Swordman\Demo\Scripts\GroundSensor.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts\Utilities\Utils.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\Actions\TeleportAction.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Movement\Jump.cs" />
@@ -89,14 +89,14 @@
      <Compile Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts\BaseClasses\Physics2DObject.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Attributes\CollectableAttribute.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Gameplay\ObjectShooter.cs" />
-     <Compile Include="Assets\Low_Swordman\Demo\Scripts\CameraController.cs" />
+     <Compile Include="Assets\External\Low_Swordman\Demo\Scripts\CameraController.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts\BaseClasses\Action.cs" />
      <Compile Include="Assets\Scripts\Utillity\TextImporter.cs" />
      <Compile Include="Assets\Scripts\Data\GroceryDataHandler.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts\Utilities\InventoryResources.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Movement\Push.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\ConditionArea.cs" />
-     <Compile Include="Assets\Low_Swordman\Demo\Scripts\Swordman.cs" />
+     <Compile Include="Assets\External\Low_Swordman\Demo\Scripts\Swordman.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\Actions\CreateObjectAction.cs" />
      <Compile Include="Assets\Scripts\Components\GameManager.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Attributes\ResourceAttribute.cs" />
@@ -104,12 +104,19 @@
      <Compile Include="Assets\Scripts\UI\GroceryUI.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Attributes\HealthSystemAttribute.cs" />
      <Compile Include="Assets\Scripts\Components\EnemyHealthSystemAttribute.cs" />
-     <Compile Include="Assets\Low_Swordman\Demo\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Low_Swordman\Demo\Scripts\Demo_GM.cs" />
+     <Compile Include="Assets\External\Low_Swordman\Demo\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\External\Low_Swordman\Demo\Scripts\Demo_GM.cs" />
+     <Compile Include="Assets\Scripts\Interactions\InteractableBehavior.cs" />
+     <Compile Include="Assets\External\Wizard - 2D Character\Demo\WizDemo1.cs" />
+     <Compile Include="Assets\External\Wizard - 2D Character\Demo\SimplePlayerController.cs" />
+     <Compile Include="Assets\Scripts\Components\Behavior\WidzardBehavior.cs" />
+     <Compile Include="Assets\Scripts\AnimHandler\WizardAnimHandler.cs" />
+     <Compile Include="Assets\Scripts\Data\AlcoholScheduler.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts\Gameplay" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\mergetool.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\images.zh-Hans.txt" />
+     <Folder Include="Assets\External\Warrior free set" />
      <None Include="Library\PackageCache\com.unity.settings-manager@1.0.3\package.json" />
      <Folder Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Font" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\guihelp.zh-Hant.txt" />
@@ -126,9 +133,10 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\differences.es.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\commontypes.zh-Hans.txt" />
      <Folder Include="Library\PackageCache\com.unity.2d.tilemap.extras@2.2.5" />
-     <Folder Include="Assets\Low_Swordman" />
+     <Folder Include="Assets\External\Low_Swordman" />
      <Folder Include="Library\PackageCache\com.unity.sysroot@2.0.5\Tests" />
      <Folder Include="Assets\Packages\YamlDotNet.13.1.0\lib" />
+     <Folder Include="Assets\External\Free\Wooden Floor Pack\Textures\Wooden Floor" />
      <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\mergetool.es.txt" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\Projectiles" />
@@ -140,10 +148,15 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\basecommands.ko.txt" />
      <Folder Include="Library\PackageCache\com.unity.ide.rider@3.0.18\Rider" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\semantic.zh-Hant.txt" />
+     <Folder Include="Library\PackageCache\com.unity.2d.pixel-perfect@5.0.3" />
+     <Folder Include="Library\PackageCache\com.unity.2d.pixel-perfect@5.0.3\Tests" />
+     <None Include="Library\PackageCache\com.unity.2d.pixel-perfect@5.0.3\package.json" />
+     <Folder Include="Assets\Etc\Materials" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\clientcommon.es.txt" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\Character\Mouths" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\Character\eyes" />
+     <Folder Include="Library\PackageCache\com.unity.2d.common@6.0.6\Tests" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\Particles" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\Character\Hair" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -152,16 +165,22 @@
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Graphics" />
      <Folder Include="Library\PackageCache\com.unity.sysroot.linux-x86_64@2.0.4" />
      <None Include="Library\PackageCache\com.unity.sysroot.linux-x86_64@2.0.4\package.json" />
+     <Folder Include="Assets\External\Free\Wooden Floor Pack\Materials" />
      <Folder Include="Assets\UnityTechnologies\Playground\Documentation\Cheatsheet Images" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\xdiff.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\configurehelper.es.txt" />
+     <Folder Include="Library\PackageCache\com.unity.burst@1.6.6\Tests" />
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts\Attributes" />
+     <Folder Include="Assets\External\Free" />
+     <Folder Include="Assets\External\Warrior free set\Aniamtion" />
      <None Include="Library\PackageCache\com.unity.timeline@1.6.4\package.json" />
      <Folder Include="Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom" />
      <Folder Include="Assets\Scripts\Components" />
+     <None Include="Assets\External\Warrior free set\License.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\configurehelper.en.txt" />
      <None Include="Library\PackageCache\com.unity.toolchain.win-x86_64-linux-x86_64@2.0.4\package.json" />
      <Folder Include="Assets\Packages\YamlDotNet.13.1.0\lib\netstandard2.1" />
+     <Folder Include="Assets\External\Wizard - 2D Character\Animations" />
      <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.8.0" />
      <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.17\ValidationConfig.json" />
@@ -171,9 +190,12 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\cm-help.es.txt" />
      <Folder Include="Assets\UnityTechnologies\Playground\Examples\Adventure\Tiles" />
+     <None Include="Library\PackageCache\com.unity.mathematics@1.2.6\package.json" />
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM" />
      <Folder Include="Library\PackageCache\com.unity.performance.profile-analyzer@1.2.2" />
      <None Include="Library\PackageCache\com.unity.sysroot@2.0.5\package.json" />
+     <Folder Include="Library\PackageCache\com.unity.2d.animation@7.0.9\Tests" />
+     <Folder Include="Assets\External\Free\Wooden Floor Pack\Demo" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\differences.zh-Hant.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\GameElements" />
@@ -191,7 +213,9 @@
      <Folder Include="Assets\Packages\YamlDotNet.13.1.0" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\xdiff.ko.txt" />
      <Folder Include="Library\PackageCache\com.unity.timeline@1.6.4" />
+     <Folder Include="Assets\Scripts\Interactions" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\clientcommon.ja.txt" />
+     <Folder Include="Library\PackageCache\com.unity.2d.path@5.0.2" />
      <Folder Include="Assets\Etc\Fonts" />
      <Folder Include="Assets\UnityTechnologies\Playground\Prefabs\Characters" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\basecommands.zh-Hans.txt" />
@@ -201,11 +225,15 @@
      <Folder Include="Library\PackageCache\com.unity.ext.nunit@1.0.6" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\differences.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\configurehelper.ja.txt" />
+     <Folder Include="Library\PackageCache\com.unity.2d.animation@7.0.9\IK" />
+     <Folder Include="Assets\External\Free\Wooden Floor Pack\Textures\Wooden Floor4" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\semantic.en.txt" />
+     <Folder Include="Library\PackageCache\com.unity.burst@1.6.6" />
      <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.17\package.json" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\workspaceserver.ko.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\plastic-gui.zh-Hans.txt" />
+     <Folder Include="Library\PackageCache\com.unity.2d.common@6.0.6" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\ValidationExceptions.json" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\FloorTiles" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\cm.en.txt" />
@@ -232,6 +260,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\images.ko.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\workspaceserver.es.txt" />
      <Folder Include="Assets\Scripts\Components\Behavior" />
+     <Folder Include="Assets\External\Free\Wooden Floor Pack\Textures\Wooden Floor3" />
      <None Include="Library\PackageCache\com.unity.performance.profile-analyzer@1.2.2\package.json" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\Character\Bodies" />
      <Folder Include="Library\PackageCache\com.unity.toolchain.win-x86_64-linux-x86_64@2.0.4\Tests" />
@@ -245,7 +274,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\plastic-gui.en.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\differences.zh-Hans.txt" />
-     <Folder Include="Assets\Low_Swordman\1.Sprite" />
+     <Folder Include="Assets\External\Low_Swordman\1.Sprite" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\binmergetool.en.txt" />
      <None Include="Assets\Packages\YamlDotNet.13.1.0\lib\netstandard2.1\YamlDotNet.xml" />
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts\Movement" />
@@ -257,7 +286,8 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\configurehelper.zh-Hant.txt" />
      <Folder Include="Library\PackageCache\com.unity.settings-manager@1.0.3" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\cm-help.zh-Hans.txt" />
-     <Folder Include="Assets\Low_Swordman\Demo\Scripts" />
+     <Folder Include="Assets\External\Low_Swordman\Demo\Scripts" />
+     <None Include="Library\PackageCache\com.unity.2d.common@6.0.6\package.json" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\semantic.ko.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
      <None Include="Library\PackageCache\com.unity.toolchain.win-x86_64-linux-x86_64@2.0.4\ValidationConfig.json" />
@@ -276,8 +306,11 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\cm.ko.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\guihelp.zh-Hans.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-     <Folder Include="Assets\Low_Swordman\3.Prefab" />
+     <Folder Include="Assets\External\Low_Swordman\3.Prefab" />
+     <Folder Include="Library\PackageCache\com.unity.mathematics@1.2.6" />
+     <Folder Include="Library\PackageCache\com.unity.2d.psdimporter@6.0.7" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\FileSystemWatcherLicense.txt" />
+     <None Include="Library\PackageCache\com.unity.2d.path@5.0.2\package.json" />
      <None Include="Library\PackageCache\com.unity.2d.tilemap.extras@2.2.5\package.json" />
      <Folder Include="Library\PackageCache\com.unity.performance.profile-analyzer@1.2.2\Tests" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\Nature" />
@@ -291,6 +324,7 @@
      <Folder Include="Assets\Scripts\Saves" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\binmergetool.zh-Hans.txt" />
      <Folder Include="Library\PackageCache\com.unity.toolchain.win-x86_64-linux-x86_64@2.0.4" />
+     <Folder Include="Assets\External\Free\Wooden Floor Pack" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\i3.es.txt" />
      <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\mergetool.zh-Hans.txt" />
@@ -302,7 +336,8 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\images.en.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\binmergetool.ja.txt" />
      <None Include="Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\package.json" />
-     <Folder Include="Assets\Low_Swordman\Demo" />
+     <Folder Include="Assets\External\Low_Swordman\Demo" />
+     <Folder Include="Assets\External\Wizard - 2D Character" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6" />
      <Folder Include="Library\PackageCache\com.unity.ide.rider@3.0.18" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
@@ -312,7 +347,9 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\binmergetool.es.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\cm.ja.txt" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Shaders\TMP_SDF_SSD.cginc" />
+     <Folder Include="Library\PackageCache\com.unity.2d.animation@7.0.9" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\ValidationConfig.json" />
+     <Folder Include="Assets\External\Free\Wooden Floor Pack\Textures" />
      <Folder Include="Assets\NuGet" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\images.ja.txt" />
      <Folder Include="Library\PackageCache\com.unity.ide.vscode@1.2.5" />
@@ -322,7 +359,7 @@
      <Folder Include="Assets\UnityTechnologies\Playground\Images\Buildings" />
      <Folder Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Resources\ScriptableObjects" />
      <Folder Include="Assets\UnityTechnologies\Playground\_INTERNAL_" />
-     <Folder Include="Assets\Low_Swordman\Demo\DemoPrefab" />
+     <Folder Include="Assets\External\Low_Swordman\Demo\DemoPrefab" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\Asteroids" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Shaders\TMP_SDF Internal Editor.shader" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\xdiff.es.txt" />
@@ -344,9 +381,10 @@
      <Folder Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\Creatures" />
      <Folder Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.17" />
-     <Folder Include="Assets\Low_Swordman\Demo\Pallet" />
+     <Folder Include="Assets\External\Low_Swordman\Demo\Pallet" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <Folder Include="Assets\External\Free\Wooden Floor Pack\Textures\Wooden Floor2" />
      <Folder Include="Assets\Scripts\Data" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\commontypes.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\configurehelper.ko.txt" />
@@ -356,33 +394,44 @@
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\Actions" />
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor" />
      <Folder Include="Assets\Scripts\UI" />
+     <None Include="Library\PackageCache\com.unity.2d.spriteshape@7.0.6\package.json" />
      <Folder Include="Assets\Packages\YamlDotNet.13.1.0\images" />
+     <Folder Include="Assets\External\Wizard - 2D Character\Demo" />
+     <None Include="Library\PackageCache\com.unity.mathematics@1.2.6\ValidationExceptions.json" />
+     <Folder Include="Assets\External" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Package Resources" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <Folder Include="Library\PackageCache\com.unity.2d.tilemap.extras@2.2.5\Tests" />
+     <Folder Include="Assets\External\Wizard - 2D Character\Sprites" />
      <Folder Include="Assets\UnityTechnologies\Playground\Examples\Adventure" />
+     <Folder Include="Assets\External\Warrior free set\Sprite Sheet" />
      <Folder Include="Assets\TextMesh Pro\Documentation" />
+     <None Include="Library\PackageCache\com.unity.2d.animation@7.0.9\package.json" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\guihelp.es.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\differences.en.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\workspaceserver.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\mergetool.ko.txt" />
-     <Folder Include="Assets\Low_Swordman\Demo\Sprite" />
+     <Folder Include="Assets\External\Low_Swordman\Demo\Sprite" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\clientcommon.ko.txt" />
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\i3.ja.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts\Conditions" />
      <None Include="Assets\Scripts\Data\PlayerData.json" />
+     <None Include="Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.xml" />
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization" />
+     <None Include="Assets\External\Warrior free set\Contact.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\cm.zh-Hans.txt" />
+     <None Include="Library\PackageCache\com.unity.2d.psdimporter@6.0.7\package.json" />
      <Folder Include="Assets\Scripts\Utillity" />
      <Folder Include="Assets\UnityTechnologies\Playground\Examples\Roguelike" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\plastic-gui.ja.txt" />
-     <Folder Include="Assets\Low_Swordman\2.Animation" />
+     <None Include="Library\PackageCache\com.unity.burst@1.6.6\package.json" />
+     <Folder Include="Assets\External\Low_Swordman\2.Animation" />
      <Folder Include="Assets\UnityTechnologies\Playground\Examples" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\i3.en.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\workspaceserver.zh-Hant.txt" />
@@ -390,9 +439,12 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\xdiff.en.txt" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
      <Folder Include="Library\PackageCache\com.unity.settings-manager@1.0.3\Tests" />
+     <Folder Include="Library\PackageCache\com.unity.2d.spriteshape@7.0.6" />
+     <Folder Include="Library\PackageCache\com.unity.2d.spriteshape@7.0.6\Tests" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\semantic.zh-Hans.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\i3.ko.txt" />
+     <Folder Include="Library\PackageCache\com.unity.2d.psdimporter@6.0.7\Tests" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\guihelp.ko.txt" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\Spaceships" />
      <None Include="Library\PackageCache\com.unity.ide.vscode@1.2.5\package.json" />
@@ -653,6 +705,27 @@
      </Reference>
      <Reference Include="YamlDotNet">
      <HintPath>C:\Users\Public\Documents\GitHub\Prototype\Vin_Chaud\Assets\Packages\YamlDotNet.13.1.0\lib\netstandard2.1\YamlDotNet.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst.Unsafe">
+     <HintPath>C:\Users\Public\Documents\GitHub\Prototype\Vin_Chaud\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst.Cecil.Mdb">
+     <HintPath>C:\Users\Public\Documents\GitHub\Prototype\Vin_Chaud\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst.Cecil.Pdb">
+     <HintPath>C:\Users\Public\Documents\GitHub\Prototype\Vin_Chaud\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst.Cecil">
+     <HintPath>C:\Users\Public\Documents\GitHub\Prototype\Vin_Chaud\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst.Cecil.Rocks">
+     <HintPath>C:\Users\Public\Documents\GitHub\Prototype\Vin_Chaud\Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.Types">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.20f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.Gradle">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.20f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.20f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -1029,6 +1102,9 @@
      <Reference Include="UnityEngine.UI">
      <HintPath>C:\Users\Public\Documents\GitHub\Prototype\Vin_Chaud\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.2D.Sprite.Editor">
+     <HintPath>C:\Users\Public\Documents\GitHub\Prototype\Vin_Chaud\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj">
@@ -1134,6 +1210,82 @@
     <ProjectReference Include="Unity.SysrootPackage.Editor.csproj">
       <Project>{e4928a05-b855-c85e-9b2c-d87e15e085c6}</Project>
       <Name>Unity.SysrootPackage.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.IK.Editor.csproj">
+      <Project>{995d5041-be0f-b7e9-03a6-68459417f4f9}</Project>
+      <Name>Unity.2D.IK.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Common.Runtime.csproj">
+      <Project>{4af7b97b-c3e1-8f5d-1f9d-30ca1cb06483}</Project>
+      <Name>Unity.2D.Common.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Psdimporter.Editor.csproj">
+      <Project>{2adda633-5bc8-74d9-0ece-102900a2ef55}</Project>
+      <Name>Unity.2D.Psdimporter.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.IK.Runtime.csproj">
+      <Project>{3745524c-795e-d63c-67fb-27b466efe954}</Project>
+      <Name>Unity.2D.IK.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.Editor.csproj">
+      <Project>{70fb3ee6-c562-0657-53ec-47c65c28a880}</Project>
+      <Name>Unity.Mathematics.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
+      <Project>{7706d651-6914-09f6-3230-736292523064}</Project>
+      <Name>Unity.2D.SpriteShape.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.PixelPerfect.csproj">
+      <Project>{00100ce7-7532-5ba9-2890-19a5c6953851}</Project>
+      <Name>Unity.2D.PixelPerfect</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.PixelPerfect.Editor.csproj">
+      <Project>{36437be4-a0e8-1656-9d8a-3f5df469a4b0}</Project>
+      <Name>Unity.2D.PixelPerfect.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Path.Editor.csproj">
+      <Project>{f61177a5-ab40-9d9c-2b07-8c7b91722a41}</Project>
+      <Name>Unity.2D.Path.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Animation.Editor.csproj">
+      <Project>{5531e168-25b1-78ec-51c0-846c38c902af}</Project>
+      <Name>Unity.2D.Animation.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.csproj">
+      <Project>{2f203d39-b0bd-9637-6535-daa0755250c0}</Project>
+      <Name>Unity.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Animation.Runtime.csproj">
+      <Project>{6a0d3d57-1468-2a21-4202-f10b98c836ff}</Project>
+      <Name>Unity.2D.Animation.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InternalAPIEngineBridge.001.csproj">
+      <Project>{9a4ab233-b92a-1420-9b39-96e2b69260f2}</Project>
+      <Name>Unity.InternalAPIEngineBridge.001</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Burst.csproj">
+      <Project>{7c63eea1-1578-278e-a636-0df337a95d8d}</Project>
+      <Name>Unity.Burst</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Common.Editor.csproj">
+      <Project>{2e2d86dd-bdee-796b-4061-29b7c58e0a43}</Project>
+      <Name>Unity.2D.Common.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="PsdPlugin.csproj">
+      <Project>{630114c8-ad42-f80b-31bc-1f78ec7ac35a}</Project>
+      <Name>PsdPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Burst.Editor.csproj">
+      <Project>{ecbfdcbe-f4ff-715f-2e7f-b026c9bf1505}</Project>
+      <Name>Unity.Burst.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj">
+      <Project>{7dfe8180-2460-d9d5-607b-b33cee7d9055}</Project>
+      <Name>Unity.InternalAPIEditorBridge.001</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.SpriteShape.Editor.csproj">
+      <Project>{e20c2af7-ddda-c129-388f-b2bfc34ec567}</Project>
+      <Name>Unity.2D.SpriteShape.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

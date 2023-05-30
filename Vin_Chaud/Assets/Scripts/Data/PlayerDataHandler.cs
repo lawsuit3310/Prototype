@@ -14,7 +14,7 @@ public class PlayerDataHandler
     public PlayerDataHandler()
     {
         #region 세이브 파일이 존재하는지 확인한 후에 없으면 파일 생성
-        Debug.Log(_environmentPath);
+        //Debug.Log(_environmentPath);
 
         if (File.Exists(_environmentPath))
         {

@@ -22,7 +22,7 @@ public class Move : Physics2DObject
 
     private Vector2 movement, cachedDirection;
     private static Vector2 LastDirection;
-    private Animator anim;
+    private static Animator anim;
 	private float moveHorizontal;
 	private float moveVertical;
 
@@ -81,25 +81,27 @@ public class Move : Physics2DObject
 
         
         // 대각선 방향으로 이동할 경우 이동 알고리즘에 의해 한 방향 만으로 이동할 때 마다 1.414배 만큼 빨리 움직이므로 개선하기 위해 대각선으로 이동 중일 경우 1.414로 나눠줌.
-        float plag = (Mathf.Abs(rigidbody2D.velocity.x) > 0.2f && Mathf.Abs(rigidbody2D.velocity.y) > 0.2f) ? Mathf.Sqrt(2) : 1;
+        float flag = (Mathf.Abs(rigidbody2D.velocity.x) > 0.2f && Mathf.Abs(rigidbody2D.velocity.y) > 0.2f) ? Mathf.Sqrt(2) : 1;
         
         //이동
         rigidbody2D.velocity =
-            (Vector2.right + Vector2.up) / plag *
+            (Vector2.right + Vector2.up) / flag *
             (movement * speed) * Time.deltaTime;
 
+        var scale = transform.localScale;
+        
         #region 플레이어 이동에 따른 방향 전환
         if (rigidbody2D.velocity.x > 0 && !anim.GetBool("isAttacking"))
             transform.localScale = new Vector3(
-            -1f,
-            transform.localScale.y,
-            transform.localScale.z
+            -1f * Mathf.Abs(scale.x) ,
+            scale.y,
+            scale.z
             );
         else if (rigidbody2D.velocity.x <  0 && !anim.GetBool("isAttacking"))
             transform.localScale = new Vector3(
-                1f,
-                transform.localScale.y,
-                transform.localScale.z
+                Mathf.Abs(scale.x),
+                scale.y,
+                scale.z
             );
         #endregion
     }

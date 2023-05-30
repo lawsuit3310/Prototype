@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     //[SerializeField]
     //private SceneController sc;
     private static StackTrace st;
-    private static PlayerDataHandler PlayerDataHandler;
+    private static AlcoholScheduler _alcoholScheduler;
+    private static PlayerDataHandler _playerDataHandler;
     [CanBeNull] private static Dictionary<int, int> _inventory;
     [CanBeNull] private static Dictionary<string, int> _upgrades;
 
@@ -27,7 +28,8 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this);
-        PlayerDataHandler = new PlayerDataHandler();
+        _playerDataHandler = new PlayerDataHandler();
+        _alcoholScheduler = new AlcoholScheduler();
 
         _inventory = GetDataDictionary<int, int>("Inventory");
         _upgrades = GetDataDictionary<string, int>("Upgrades");
@@ -50,7 +52,7 @@ public class GameManager : MonoBehaviour
         try
         {
             result = JsonConvert.DeserializeObject<Dictionary<T1, T2>>(
-            PlayerDataHandler.GetJObject()[key].ToString());
+            _playerDataHandler.GetJObject()[key].ToString());
         }
         catch (Exception e)
         {
@@ -141,7 +143,7 @@ public class GameManager : MonoBehaviour
     public static void ReplaceData()
     {
         //PlayerDataHandler.GetJObject()["PlayerData"]["Inventory"] = JsonConvert.SerializeObject(Inventory);
-        if (!PlayerDataHandler.WriteSaveData("Inventory", TextImporter.DictionaryToString(_inventory)))
+        if (!_playerDataHandler.WriteSaveData("Inventory", TextImporter.DictionaryToString(_inventory)))
         {
             st = st == null ? new StackTrace(new StackFrame(true)) : st;
             Debug.Log($"SaveWasFailed : GameManager : {st.GetFrame(0).GetFileLineNumber()}");
@@ -149,7 +151,7 @@ public class GameManager : MonoBehaviour
     }
     public static void ReplaceData<T1, T2>(string key, Dictionary<T1, T2> dict)
     {
-        if (!PlayerDataHandler.WriteSaveData(key, TextImporter.DictionaryToString(dict)))
+        if (!_playerDataHandler.WriteSaveData(key, TextImporter.DictionaryToString(dict)))
         {
             st = st == null ? new StackTrace(new StackFrame(true)) : st;
             Debug.Log($"SaveWasFailed : GameManager : {st.GetFrame(0).GetFileLineNumber()}");
@@ -163,7 +165,7 @@ public class GameManager : MonoBehaviour
     public static void RenewalStatus(string _key)
     {
         
-        var data = PlayerDataHandler.GetJObject();
+        var data = _playerDataHandler.GetJObject();
         //아이템 등을 강화 시켜 스테이스가 변화할 경우 그거 적용 시키는 용도
         //업그레이드 횟수와 능력치 둘 다 갱신
         if (_key == "*")
@@ -213,7 +215,7 @@ public class GameManager : MonoBehaviour
            
         }
         
-        if(!PlayerDataHandler.WriteSaveData(data))
+        if(!_playerDataHandler.WriteSaveData(data))
             Debug.Log("failed");
     }
     
