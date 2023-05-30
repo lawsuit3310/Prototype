@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -207,8 +207,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1991359806}
-        m_TargetAssemblyTypeName: VinChaud.GameManager, Assembly-CSharp
+      - m_Target: {fileID: 2020587621}
+        m_TargetAssemblyTypeName: UIScript, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -216,7 +216,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: game
+          m_StringArgument: Adventure
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &582629125
@@ -738,6 +738,7 @@ GameObject:
   - component: {fileID: 2020587619}
   - component: {fileID: 2020587618}
   - component: {fileID: 2020587617}
+  - component: {fileID: 2020587621}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -827,3 +828,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2020587621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020587616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aff5eab828ef4f6399febda5f5f27f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfPlayers: 0
+  gameType: 0
+  scoreToWin: 5
+  numberLabels:
+  - {fileID: 0}
+  - {fileID: 0}
+  rightLabel: {fileID: 0}
+  leftLabel: {fileID: 0}
+  winLabel: {fileID: 0}
+  statsPanel: {fileID: 0}
+  gameOverPanel: {fileID: 0}
+  winPanel: {fileID: 0}
+  inventory: {fileID: 0}
+  resourceItemPrefab: {fileID: 0}

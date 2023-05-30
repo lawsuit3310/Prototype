@@ -9,6 +9,9 @@ TagManager:
   - Bullet
   - Ground
   - Pickup
+  - SCENEMOVE
+  - STOREUI
+  - SCROLLPARENT
   layers:
   - Default
   - TransparentFX

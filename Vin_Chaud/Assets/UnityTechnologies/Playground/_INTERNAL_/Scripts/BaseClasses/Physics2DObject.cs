@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 
@@ -8,10 +9,16 @@ public abstract class Physics2DObject : MonoBehaviour
 {
 	[HideInInspector]
 	public new Rigidbody2D rigidbody2D;
+    
+    public int gatherableItemId = 2;
 
 	void Awake ()
 	{
 		rigidbody2D = GetComponent<Rigidbody2D>();
 	}
 
+    private void OnEnable()
+    {
+        
+    }
 }

@@ -22,13 +22,13 @@ public class Move : Physics2DObject
 
     private Vector2 movement, cachedDirection;
     private static Vector2 LastDirection;
-    private SpriteRenderer _spriteRenderer;
+    private Animator anim;
 	private float moveHorizontal;
 	private float moveVertical;
 
     private void Start()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update gets called every frame
@@ -56,11 +56,10 @@ public class Move : Physics2DObject
 				moveHorizontal = 0f;
 				break;
 		}
-			
-		movement = new Vector2(moveHorizontal, moveVertical);
 
+        movement = new Vector2(moveHorizontal, moveVertical);
 
-		//rotate the GameObject towards the direction of movement
+        //rotate the GameObject towards the direction of movement
 		//the axis to look can be decided with the "axis" variable
 		if(orientToDirection)
 		{
@@ -78,16 +77,34 @@ public class Move : Physics2DObject
 	// FixedUpdate is called every frame when the physics are calculated
 	void FixedUpdate ()
 	{
-		// Apply the force to the Rigidbody2d
-		rigidbody2D.AddForce(movement * speed * 10f);
-        transform.localScale = new Vector3(
-            Mathf.Abs(transform.localScale.x)* 
-            this.rigidbody2D.velocity.x < 0 ? -0.5f : 0.5f ,
-            transform.localScale.y,transform.localScale.z
+		// Apply the force to the Rigidbody2d\
+
+        
+        // 대각선 방향으로 이동할 경우 이동 알고리즘에 의해 한 방향 만으로 이동할 때 마다 1.414배 만큼 빨리 움직이므로 개선하기 위해 대각선으로 이동 중일 경우 1.414로 나눠줌.
+        float plag = (Mathf.Abs(rigidbody2D.velocity.x) > 0.2f && Mathf.Abs(rigidbody2D.velocity.y) > 0.2f) ? Mathf.Sqrt(2) : 1;
+        
+        //이동
+        rigidbody2D.velocity =
+            (Vector2.right + Vector2.up) / plag *
+            (movement * speed) * Time.deltaTime;
+
+        #region 플레이어 이동에 따른 방향 전환
+        if (rigidbody2D.velocity.x > 0 && !anim.GetBool("isAttacking"))
+            transform.localScale = new Vector3(
+            -1f,
+            transform.localScale.y,
+            transform.localScale.z
             );
+        else if (rigidbody2D.velocity.x <  0 && !anim.GetBool("isAttacking"))
+            transform.localScale = new Vector3(
+                1f,
+                transform.localScale.y,
+                transform.localScale.z
+            );
+        #endregion
     }
 
-    public static Vector2 GetLastDirection()
+    public Vector2 GetLastDirection()
     {
         return LastDirection;
     }

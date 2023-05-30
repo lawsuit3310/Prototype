@@ -4,7 +4,6 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
 using System.Text;
-using Unity.VisualScripting;
 
 public class PlayerDataHandler
 {
@@ -48,26 +47,26 @@ public class PlayerDataHandler
             _playerData = new JObject
             {
                 ["UUID"] = SystemInfo.deviceUniqueIdentifier,
-                ["PlayerData"] = new JArray()
+                ["PlayerData"] = new JObject()
                 {
-                    new JObject()
-                    {
-                        ["Name"] = "John",
-                        ["ATK"] = 5,
-                        ["HP"] = 100,
-                        ["Money"] = 0,
-                        
-                    }
-                }
-                ["Inventory"] = new JArray()
+                    ["Name"] = "John",
+                    ["ATK"] = 5,
+                    ["HP"] = 100,
+                    ["Money"] = 0,
+                    ["CriticalRate"] = 30
+                },
+                ["Inventory"] = new JObject()
                 {
-                    new JObject
-                    {
-                        //VSurvLikeData.json의 아이템 인덱스 : 아이템의 보유 갯수
-                        ["0"] = 0,
-                        ["1"] = 0,
-                        ["2"] = 0
-                    }
+                    //VSurvLikeData.json의 아이템 인덱스 : 아이템의 보유 갯수
+                    ["0"] = 0,
+                    ["1"] = 0,
+                    ["2"] = 0
+                },
+                ["Upgrades"] = new JObject()
+                {
+                    ["ATK"] = 0,
+                    ["HP"] = 0,
+                    ["CriticalRate"] = 0
                 }
             };
         }
@@ -77,8 +76,6 @@ public class PlayerDataHandler
         }
         return result;
     }
-
-    
     public bool WriteSaveData()
     {
         var result = true;
@@ -95,15 +92,14 @@ public class PlayerDataHandler
         }
         return result;
     }
-    public bool WriteSaveData(string _context)
+    public bool WriteSaveData(string _jObject)
     {
         var result = true;
+
+        if (_jObject == "*") return WriteSaveData(_playerData);
         try
         {
-            
-            //json으로 변환 불가능한 텍스트가 오면 에러 던짐
-            JObject.Parse(_context);
-            File.WriteAllText(_environmentPath, _context, encoding: Encoding.UTF8);
+            File.WriteAllText(_environmentPath, _jObject, encoding: Encoding.UTF8);
         }
         catch (Exception e)
         {
@@ -111,26 +107,33 @@ public class PlayerDataHandler
         }
         return result;
     }
-    public bool WriteSaveData(JObject _jObject)
+    public bool WriteSaveData(string key,string context)
     {
+        Debug.Log(context);
         var result = true;
         try
         {
-            WriteSaveData(_jObject.ToString());
+            //json으로 변환 불가능한 텍스트가 오면 에러 던짐
+            _playerData[key] = JObject.Parse(context);
+            File.WriteAllText(_environmentPath, _playerData.ToString(), encoding: Encoding.UTF8);
         }
         catch (Exception e)
         {
             result = false;
         }
         return result;
+    }
+    public bool WriteSaveData(JObject jObject)
+    {
+        return WriteSaveData(jObject.ToString());
     }
 
-    public bool AddItemToJObject(string _key, JToken value)
+    public bool AddItemToJObject(string key, JToken value)
     {
         var result = true;
         try
         {
-            _playerData[key: _key] = value;
+            _playerData[key: key] = value;
         }
         catch (Exception e)
         {

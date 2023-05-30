@@ -1,16 +1,14 @@
 ﻿{
-    "Jojo" : "3rd",
-  
-    "gatherableItems" : [{
-      "id" : 0,
-      "name" : "Honey"
+  "GatherableItems" : [{
+      "ID" : 0,
+      "NAME" : "Honey"
     },
     {
-      "id" : 1,
-      "name" : "Wheat"
+      "ID" : 1,
+      "NAME" : "Wheat"
     },
     {
-      "id" : 2,
-      "name" : "Grape"
+      "ID" : 2,
+      "NAME" : "Grape"
     }]
 }

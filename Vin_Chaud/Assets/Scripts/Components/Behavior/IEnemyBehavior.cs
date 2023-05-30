@@ -1,7 +1,4 @@
-﻿namespace VinChaud.Behavior
+﻿public interface IEnemyBehavior
 {
-    public interface IEnemyBehavior
-    {
-        
-    }
+    
 }

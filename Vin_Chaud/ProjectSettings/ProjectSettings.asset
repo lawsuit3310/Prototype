@@ -652,7 +652,7 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Standalone: GAMEOBJECT_HEADER;DEFAULT_INSPECTORS;CUSTOM_INSPECTORS
+    Standalone: 
   additionalCompilerArguments: {}
   platformArchitecture:
     iPhone: 1

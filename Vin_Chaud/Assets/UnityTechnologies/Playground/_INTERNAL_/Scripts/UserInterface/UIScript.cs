@@ -1,9 +1,11 @@
-﻿using System;
+﻿using JetBrains.Annotations;
+using System;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using VinChaud;
 
 [AddComponentMenu("")]
 public class UIScript : MonoBehaviour
@@ -40,7 +42,6 @@ public class UIScript : MonoBehaviour
 
     private void Awake()
     {
-        Data.ParsingData();
         stopGame = false;
     }
 
@@ -125,7 +126,10 @@ public class UIScript : MonoBehaviour
 			winLabel.text = "Player " + ++playerNumber + " wins!";
 			statsPanel.SetActive(false);
 			winPanel.SetActive(true);
-		}
+            GameManager.ReplaceData();
+            GameManager.ReplaceData("PlayerData", PlayerData.playerData);
+            GameManager.ClearInventory();
+        }
 	}
 
 
@@ -141,6 +145,9 @@ public class UIScript : MonoBehaviour
             stopGame = true;
 	        statsPanel.SetActive(false);
 	        gameOverPanel.SetActive(true);
+            GameManager.ReplaceData();
+            GameManager.ReplaceData("PlayerData", PlayerData.playerData);
+            GameManager.ClearInventory();
 	    }
 	}
 
@@ -235,6 +242,11 @@ public class UIScript : MonoBehaviour
 		Life,
 		Endless
 	}
+
+    public void LoadScene(string _sceneName)
+    {
+        SceneManager.LoadScene(_sceneName );
+    }
 }
 
 
