@@ -27,6 +27,7 @@ public class GroceryUI : MonoBehaviour
 
     public void CloseStorePanel()
     {
+        Time.timeScale = 1;
         storePanel.SetActive(false);
     }
 

@@ -2,7 +2,7 @@
   "UUID": "83b5229d5d4d6a091a2cdb173576b9ff16d2104a",
   "PlayerData": {
     "Name": "John",
-    "ATK": 36,
+    "ATK": 40,
     "HP": 540,
     "Money": 0,
     "CriticalRate": 320
@@ -13,7 +13,7 @@
     "2": 0
   },
   "Upgrades": {
-    "ATK": 32,
+    "ATK": 36,
     "HP": 45,
     "CriticalRate": 30
   }

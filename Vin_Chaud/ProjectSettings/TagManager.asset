@@ -16,6 +16,7 @@ TagManager:
   - GROCERYMANAGER
   - FLOOR
   - BACKGROUND
+  - CONVERSEMANAGER
   layers:
   - Default
   - TransparentFX
