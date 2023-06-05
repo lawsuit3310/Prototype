@@ -10,5 +10,23 @@
     {
       "ID" : 2,
       "NAME" : "Grape"
-    }]
+    }],
+  
+  "Alcohol" : [
+    {
+      "ID" : 0,
+      "NAME" : "Mead",
+      "SPEND_TIME" : 3600 
+    },
+    {
+      "ID" : 1,
+      "NAME" : "Beer",
+      "SPEND_TIME" : 7200
+    },
+    {
+      "ID" : 2,
+      "NAME" : "Wine",
+      "SPEND_TIME" : 10800
+    }
+  ]
 }

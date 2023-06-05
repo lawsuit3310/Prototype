@@ -53,7 +53,8 @@ public class PlayerDataHandler
                     ["ATK"] = 5,
                     ["HP"] = 100,
                     ["Money"] = 0,
-                    ["CriticalRate"] = 30
+                    ["CriticalRate"] = 30,
+                    ["Date"] = 0
                 },
                 ["Inventory"] = new JObject()
                 {
@@ -67,6 +68,12 @@ public class PlayerDataHandler
                     ["ATK"] = 0,
                     ["HP"] = 0,
                     ["CriticalRate"] = 0
+                },
+                ["Alcohols"] = new JObject()
+                {
+                    ["0"] = 0,
+                    ["1"] = 0,
+                    ["2"] = 0
                 }
             };
         }
@@ -109,7 +116,6 @@ public class PlayerDataHandler
     }
     public bool WriteSaveData(string key,string context)
     {
-        Debug.Log(context);
         var result = true;
         try
         {

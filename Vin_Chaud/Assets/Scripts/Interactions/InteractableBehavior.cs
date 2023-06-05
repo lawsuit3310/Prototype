@@ -5,6 +5,8 @@ using UnityEngine;
 
 public abstract class InteractableBehavior : MonoBehaviour
 {
+    
+    public GameObject interactableUi;
     public bool isInteractable = false;
     public float[] limitPos = {0,0}; 
     public abstract void DistanceChecker();

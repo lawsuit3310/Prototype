@@ -43,7 +43,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Components\RestartGame.cs" />
      <Compile Include="Assets\Scripts\Components\Behavior\PlayerBehavior.cs" />
-     <Compile Include="Assets\Scripts\Components\GroceryManager.cs" />
+     <Compile Include="Assets\Scripts\Components\Managers\GroceryManager.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Attributes\BulletAttribute.cs" />
      <Compile Include="Assets\Scripts\Components\Behavior\WizardBehavior.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\ConditionKeyPress.cs" />
@@ -75,7 +75,9 @@
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\Actions\TeleportAction.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Movement\Jump.cs" />
      <Compile Include="Assets\Scripts\Data\StatusKeys.cs" />
+     <Compile Include="Assets\Scripts\Components\Managers\BrewryManager.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Movement\Rotate.cs" />
+     <Compile Include="Assets\Scripts\UI\InteractableUI.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Attributes\DestroyForPointsAttribute.cs" />
      <Compile Include="Assets\Scripts\Components\Behavior\BeeBehavior.cs" />
      <Compile Include="Assets\Scripts\Interactions\InteractableBehavior.cs" />
@@ -101,10 +103,11 @@
      <Compile Include="Assets\External\Wizard - 2D Character\Demo\SimplePlayerController.cs" />
      <Compile Include="Assets\Scripts\Data\AlcoholScheduler.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\ConditionArea.cs" />
+     <Compile Include="Assets\Scripts\Components\Brewery.cs" />
      <Compile Include="Assets\External\Low_Swordman\Demo\Scripts\Swordman.cs" />
      <Compile Include="Assets\Scripts\AnimHandler\WizardAnimHandler.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\Actions\CreateObjectAction.cs" />
-     <Compile Include="Assets\Scripts\Components\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Components\Managers\GameManager.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Attributes\ResourceAttribute.cs" />
      <Compile Include="Assets\Scripts\Components\MonsterSpawner.cs" />
      <Compile Include="Assets\Scripts\UI\GroceryUI.cs" />
@@ -113,6 +116,8 @@
      <Compile Include="Assets\External\Low_Swordman\Demo\Scripts\PlayerController.cs" />
      <Compile Include="Assets\External\Wizard - 2D Character\Demo\WizDemo1.cs" />
      <Compile Include="Assets\External\Low_Swordman\Demo\Scripts\Demo_GM.cs" />
+     <Compile Include="Assets\Scripts\Components\RemainTimeUI.cs" />
+     <Compile Include="Assets\Scripts\Components\Toast.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts\Gameplay" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\mergetool.ja.txt" />
@@ -221,6 +226,7 @@
      <Folder Include="Library\PackageCache\com.unity.2d.path@5.0.2" />
      <Folder Include="Assets\Etc\Fonts" />
      <Folder Include="Assets\UnityTechnologies\Playground\Prefabs\Characters" />
+     <Folder Include="Assets\Scripts\Components\Managers" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\basecommands.zh-Hans.txt" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\PackageConversionData.json" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\guihelp.en.txt" />
@@ -309,6 +315,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\i3.zh-Hant.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\cm.ko.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\guihelp.zh-Hans.txt" />
+     <None Include="Assets\Scripts\Data\AlcoholSchedule.json" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <Folder Include="Assets\External\Low_Swordman\3.Prefab" />
      <Folder Include="Library\PackageCache\com.unity.mathematics@1.2.6" />
@@ -379,6 +386,7 @@
      <None Include="Library\PackageCache\com.unity.ide.vscode@1.2.5\ValidationExceptions.json" />
      <None Include="Library\PackageCache\com.unity.visualscripting@1.8.0\ValidationConfig.json" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\GeometricShapes" />
+     <Folder Include="Assets\Resources" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Shaders" />
      <Folder Include="Library\PackageCache\com.unity.settings-manager@1.0.3\Content" />
      <Folder Include="Assets\Packages\Newtonsoft.Json.13.0.3" />

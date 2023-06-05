@@ -6,18 +6,21 @@ using UnityEngine;
 
 public class GroceryDataHandler
 {
-    private readonly string _environmentPath = Application.dataPath + "/Scripts/Data/VSurvLikeData.json";
-    private static JObject _gatherableItems;
-    private FileStream _fileStream;
+    private readonly static string _environmentPath = Application.dataPath + "/Scripts/Data/VSurvLikeData.json";
+    private static JArray _gatherableItems;
+    private static JArray _alcoholDictionary;
     private static Dictionary<int, string> GroceryDictionary;
+
 
     public GroceryDataHandler()
     {
         GroceryDictionary = new Dictionary<int, string>();
-        _gatherableItems = JObject.Parse(File.ReadAllText(_environmentPath));
-        //Debug.Log(_gatherableItems["GatherableItems"][0]);
-
-        foreach (var node in _gatherableItems["GatherableItems"])
+        _gatherableItems =
+            (JArray)JObject.Parse(File.ReadAllText(_environmentPath))["GatherableItems"];
+        _alcoholDictionary =
+            (JArray)JObject.Parse(File.ReadAllText(_environmentPath))["Alcohol"];
+        
+        foreach (var node in _gatherableItems)
         {
             GroceryDictionary.Add(
                 Convert.ToInt32(node["ID"]), node["NAME"].ToString());
@@ -27,5 +30,13 @@ public class GroceryDataHandler
     public Dictionary<int, string> GetGroceryDictionary()
     {
         return GroceryDictionary;
+    }
+
+    public static JArray GetAlcoholDictionary()
+    {
+        if (_alcoholDictionary == null)
+            _alcoholDictionary = 
+                (JArray)JObject.Parse(File.ReadAllText(_environmentPath))["Alcohol"];
+        return _alcoholDictionary;
     }
 }

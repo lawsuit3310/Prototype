@@ -7,9 +7,9 @@ public class WizardBehavior : InteractableBehavior
 {
     [SerializeField] private GameObject player;
     [SerializeField] private float Speed = 1;
-    [SerializeField] private GameObject interactableUi;
     
     public static GroceryUI StoreUI;
+    private GameObject instance;
     private ConverseManager _converseManager;
     private Rigidbody2D _rigid;
 
@@ -83,23 +83,28 @@ public class WizardBehavior : InteractableBehavior
 
     public override void Interactable()
     {
-        interactableUi.SetActive(isInteractable);
-        if (isInteractable)
+        if (this.isInteractable)
         {
             var position = this.transform.position;
-            interactableUi.transform.parent = this.gameObject.transform;
-            interactableUi.transform.position =
+            if(Input.GetKeyDown(KeyCode.Z))
+                Interact();
+            if (instance == null)
+            {
+                instance = Instantiate(interactableUi);
+            }
+            else return;
+            instance.SetActive(true);
+            instance.transform.parent = this.gameObject.transform;
+            instance.transform.position =
                 new Vector3() { x = position.x, y = position.y + 0.5f };
-            interactableUi.transform.localScale = 
+            instance.transform.localScale = 
                 new Vector2()
                     {
                         x = this.transform.localScale.x < 0 ?
-                            Mathf.Abs(interactableUi.transform.localScale.x) * -1 :
-                            Mathf.Abs(interactableUi.transform.localScale.x),
-                        y = interactableUi.transform.localScale.y
+                            Mathf.Abs(instance.transform.localScale.x) * -1 :
+                            Mathf.Abs(instance.transform.localScale.x),
+                        y = instance.transform.localScale.y
                     };
-            if(Input.GetKeyDown(KeyCode.Z))
-                Interact();
         }
     }
 

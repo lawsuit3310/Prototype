@@ -1,0 +1,20 @@
+﻿{
+  "0": {
+    "EndTime": "2023-06-05T20:52:41.9004679Z",
+    "Type": 2,
+    "IS_DONE": false,
+    "IS_PROCESSING": true
+  },
+  "1": {
+    "EndTime": "2023-06-09T04:58:10.459211Z",
+    "Type": 0,
+    "IS_DONE": false,
+    "IS_PROCESSING": true
+  },
+  "2": {
+    "EndTime": "2023-06-05T19:52:47.2796057Z",
+    "Type": 1,
+    "IS_DONE": false,
+    "IS_PROCESSING": true
+  }
+}
