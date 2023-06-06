@@ -277,9 +277,62 @@ public class GameManager : MonoBehaviour
             Debug.Log("failed");
     }
 
+    public static void RenewalStatus(string _key, int amount)
+    {
+        
+        var data = _playerDataHandler.GetJObject();
+        //아이템 등을 강화 시켜 스테이스가 변화할 경우 그거 적용 시키는 용도
+        //업그레이드 횟수와 능력치 둘 다 갱신
+        if (_key == "*")
+        {
+            Debug.Log(_upgrades.Keys.Count);
+            //renewal all
+            foreach (var keyValueFair in _upgrades)
+            {
+                data[StatusKeys.PlayerData][keyValueFair.Key] =
+                    Convert.ToInt32(data[StatusKeys.PlayerData][keyValueFair.Key]) +  amount ;
+            }
+        }
+        else
+        {
+            amount *= _key == StatusKeys.Money ? -1 : 1;
+            Debug.Log(data[StatusKeys.PlayerData][_key] + " " + amount);
+            data[StatusKeys.PlayerData][_key] =
+                Convert.ToInt32(data[StatusKeys.PlayerData][_key]) + amount;
+        }
+        
+        if(!_playerDataHandler.WriteSaveData(data))
+            Debug.Log("failed");
+    }
+
+    
+    public static string GetStatus(string _key)
+    {
+        var data = _playerDataHandler.GetJObject();
+        return data[StatusKeys.PlayerData][_key].ToString();
+    }
+    public static string GetUpgrades(string _key)
+    {
+        var data = _playerDataHandler.GetJObject();
+        return data[StatusKeys.Upgrades][_key].ToString();
+    }
+
     public static void ShowToastMessage(string msg)
     {
         toastMsg.GetComponentInChildren<TMP_Text>().text = msg;
         toastMsg.SetActive(true);
+    }
+    
+    public static float CalcUpgradeCost(int Upgrades)
+    {
+        Upgrades = Upgrades == 0 ? 1 : Upgrades;
+        var result = 
+            Mathf.Pow(1.03f, Upgrades) * Mathf.Pow(Upgrades, (2/2.3f));
+        result = Mathf.Floor(result * 10f) * 10f;
+        return result;
+    }
+    public static float CalcUpgradeCost(string Upgrades)
+    {
+        return CalcUpgradeCost(Convert.ToInt32(Upgrades));
     }
 }

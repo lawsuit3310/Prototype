@@ -139,7 +139,7 @@ public class PlayerDataHandler
         var result = true;
         try
         {
-            _playerData[key: key] = value;
+            _playerData[key] = value;
         }
         catch (Exception e)
         {

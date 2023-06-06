@@ -19,5 +19,20 @@ public class InteractableUI : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        if (this.transform.parent.localScale.x < 0)
+            this.transform.localScale = new Vector3()
+            {
+                x = Mathf.Abs(this.transform.localScale.x) * -1,
+                y = this.transform.localScale.y,
+                z = this.transform.localScale.z
+            };
+        else
+            this.transform.localScale = new Vector3()
+            {
+                x = Mathf.Abs(this.transform.localScale.x),
+                y = this.transform.localScale.y,
+                z = this.transform.localScale.z
+            };
     }
 }

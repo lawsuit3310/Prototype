@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Components\Sword.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\Actions\DestroyAction.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts\Utilities\Enums.cs" />
+     <Compile Include="Assets\Scripts\Components\Toast.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\ConditionCollision.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts\UserInterface\DialogueSystem.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Gameplay\PickUpAndHold.cs" />
@@ -72,6 +73,7 @@
      <Compile Include="Assets\Scripts\Components\Behavior\IEnemyBehavior.cs" />
      <Compile Include="Assets\External\Low_Swordman\Demo\Scripts\GroundSensor.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts\Utilities\Utils.cs" />
+     <Compile Include="Assets\Scripts\Components\RemainTimeUI.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\Actions\TeleportAction.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Movement\Jump.cs" />
      <Compile Include="Assets\Scripts\Data\StatusKeys.cs" />
@@ -116,8 +118,6 @@
      <Compile Include="Assets\External\Low_Swordman\Demo\Scripts\PlayerController.cs" />
      <Compile Include="Assets\External\Wizard - 2D Character\Demo\WizDemo1.cs" />
      <Compile Include="Assets\External\Low_Swordman\Demo\Scripts\Demo_GM.cs" />
-     <Compile Include="Assets\Scripts\Components\RemainTimeUI.cs" />
-     <Compile Include="Assets\Scripts\Components\Toast.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts\Gameplay" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\mergetool.ja.txt" />
