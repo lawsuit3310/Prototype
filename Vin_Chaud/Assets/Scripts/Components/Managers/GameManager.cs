@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     //private SceneController sc;
     private static StackTrace st;
     private static PlayerDataHandler _playerDataHandler;
+    private static GroceryManager _groceryManager;
     private static GameObject toastMsg;
     [CanBeNull] private static Dictionary<int, int> _inventory;
     [CanBeNull] private static Dictionary<int, int> _alcoholInventory;
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(this);
         _playerDataHandler = new PlayerDataHandler();
+        _groceryManager = GameObject.FindWithTag("GROCERYMANAGER").GetComponent<GroceryManager>();
 
         _inventory = GetDataDictionary<int, int>("Inventory");
         _upgrades = GetDataDictionary<string, int>("Upgrades");
@@ -116,6 +118,7 @@ public class GameManager : MonoBehaviour
         else
         {
             _inventory[key] -= 1;   
+            GroceryUI.UpdateGroceryUI(_groceryManager.groceryAmountText);
         }
         ReplaceData();
         return result;
@@ -322,7 +325,11 @@ public class GameManager : MonoBehaviour
         toastMsg.GetComponentInChildren<TMP_Text>().text = msg;
         toastMsg.SetActive(true);
     }
-    
+    public static void ShowToastMessage(object msg)
+    {
+        toastMsg.GetComponentInChildren<TMP_Text>().text = msg.ToString();
+        toastMsg.SetActive(true);
+    }
     public static float CalcUpgradeCost(int Upgrades)
     {
         Upgrades = Upgrades == 0 ? 1 : Upgrades;

@@ -17,7 +17,7 @@ public class GroceryManager : MonoBehaviour
     }
     void Start()
     {
-        GroceryUI.UpdateGroceryUI(groceryAmountText, _groceryDataHandler);
+        GroceryUI.UpdateGroceryUI(groceryAmountText);
     }
     
 }

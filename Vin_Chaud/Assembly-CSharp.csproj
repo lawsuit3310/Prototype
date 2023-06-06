@@ -178,6 +178,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\xdiff.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\configurehelper.es.txt" />
      <Folder Include="Library\PackageCache\com.unity.burst@1.6.6\Tests" />
+     <Folder Include="Assets\Images\Icon" />
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts\Attributes" />
      <Folder Include="Assets\External\Free" />
      <Folder Include="Assets\External\Warrior free set\Aniamtion" />
@@ -243,7 +244,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\plastic-gui.zh-Hans.txt" />
      <Folder Include="Library\PackageCache\com.unity.2d.common@6.0.6" />
-     <Folder Include="Assets\Images\portraits" />
+     <Folder Include="Assets\Images\Portraits" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\ValidationExceptions.json" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\FloorTiles" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\cm.en.txt" />

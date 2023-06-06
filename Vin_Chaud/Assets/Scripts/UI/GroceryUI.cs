@@ -17,14 +17,12 @@ public class GroceryUI : MonoBehaviour
         RefreshUI();
     }
 
-    public static void UpdateGroceryUI(TMP_Text[] groceryAmountText, GroceryDataHandler _groceryDataHandler)
+    public static void UpdateGroceryUI(TMP_Text[] groceryAmountText)
     {
         var inventory = GameManager.GetInventory();
-        var groceryDictionary = _groceryDataHandler.GetGroceryDictionary();
         for (int i = 0; i < groceryAmountText.Length; i++)
         {
-            groceryAmountText[i].text =
-                $"{groceryDictionary[i]} : {inventory[i]}";
+            groceryAmountText[i].text = $"{inventory[i]}";
         }
     }
 
