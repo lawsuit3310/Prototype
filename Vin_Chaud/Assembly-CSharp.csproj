@@ -48,7 +48,7 @@
      <Compile Include="Assets\Scripts\Components\Behavior\WizardBehavior.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\ConditionKeyPress.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts\UserInterface\BalloonScript.cs" />
-     <Compile Include="Assets\Scripts\UI\ConverseManager.cs" />
+     <Compile Include="Assets\Scripts\Components\Converse.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Attributes\ModifyHealthAttribute.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Movement\Patrol.cs" />
      <Compile Include="Assets\Scripts\Data\PlayerDataHandler.cs" />
@@ -76,7 +76,7 @@
      <Compile Include="Assets\Scripts\Components\RemainTimeUI.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Conditions\Actions\TeleportAction.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Movement\Jump.cs" />
-     <Compile Include="Assets\Scripts\Data\StatusKeys.cs" />
+     <Compile Include="Assets\Scripts\Data\Strings\StatusKeys.cs" />
      <Compile Include="Assets\Scripts\Components\Managers\BrewryManager.cs" />
      <Compile Include="Assets\UnityTechnologies\Playground\Scripts\Movement\Rotate.cs" />
      <Compile Include="Assets\Scripts\UI\InteractableUI.cs" />
@@ -118,6 +118,13 @@
      <Compile Include="Assets\External\Low_Swordman\Demo\Scripts\PlayerController.cs" />
      <Compile Include="Assets\External\Wizard - 2D Character\Demo\WizDemo1.cs" />
      <Compile Include="Assets\External\Low_Swordman\Demo\Scripts\Demo_GM.cs" />
+     <Compile Include="Assets\Scripts\Components\Managers\DateManager.cs" />
+     <Compile Include="Assets\Scripts\Components\LoadingSceneManager.cs" />
+     <Compile Include="Assets\Scripts\Data\Strings\SceneName.cs" />
+     <Compile Include="Assets\Scripts\Components\Managers\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\Components\AWord.cs" />
+     <Compile Include="Assets\Scripts\Components\Managers\ConverseManager.cs" />
+     <Compile Include="Assets\Scripts\Utillity\CSVReader.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts\Gameplay" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\mergetool.ja.txt" />
@@ -179,6 +186,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\configurehelper.es.txt" />
      <Folder Include="Library\PackageCache\com.unity.burst@1.6.6\Tests" />
      <Folder Include="Assets\Images\Icon" />
+     <Folder Include="Assets\Scripts\Data\Strings" />
      <Folder Include="Assets\UnityTechnologies\Playground\Scripts\Attributes" />
      <Folder Include="Assets\External\Free" />
      <Folder Include="Assets\External\Warrior free set\Aniamtion" />
@@ -211,6 +219,7 @@
      <Folder Include="Assets\UnityTechnologies\Playground\Images\Blocks" />
      <Folder Include="Assets\TextMesh Pro\Resources" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\plastic-gui.ko.txt" />
+     <Folder Include="Assets\Images\UI" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\basecommands.ja.txt" />
      <None Include="Library\PackageCache\com.unity.visualscripting@1.8.0\package.json" />
      <None Include="Library\PackageCache\com.unity.editorcoroutines@1.0.0\package.json" />
@@ -244,7 +253,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\plastic-gui.zh-Hans.txt" />
      <Folder Include="Library\PackageCache\com.unity.2d.common@6.0.6" />
-     <Folder Include="Assets\Images\Portraits" />
+     <Folder Include="Assets\Resources\Images\Portraits" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\ValidationExceptions.json" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\FloorTiles" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\cm.en.txt" />
@@ -265,6 +274,7 @@
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Scripts" />
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\basecommands.en.txt" />
+     <Folder Include="Assets\Resources\Sound\Voice" />
      <Folder Include="Assets\NuGet\Resources" />
      <Folder Include="Library\PackageCache\com.unity.sysroot.linux-x86_64@2.0.4\Tests" />
      <Folder Include="Library\PackageCache\com.unity.testtools.codecoverage@1.2.2" />
@@ -362,6 +372,7 @@
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Shaders\TMP_SDF_SSD.cginc" />
      <Folder Include="Library\PackageCache\com.unity.2d.animation@7.0.9" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\ValidationConfig.json" />
+     <Folder Include="Assets\Resources\Sound" />
      <Folder Include="Assets\External\Free\Wooden Floor Pack\Textures" />
      <Folder Include="Assets\NuGet" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\images.ja.txt" />
@@ -393,6 +404,7 @@
      <Folder Include="Assets\Packages\Newtonsoft.Json.13.0.3" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\localization\commontypes.ko.txt" />
      <Folder Include="Assets\UnityTechnologies\Playground\_INTERNAL_\Scripts" />
+     <Folder Include="Assets\Resources\Images" />
      <Folder Include="Assets\UnityTechnologies\Playground\Images\Creatures" />
      <Folder Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.17" />
      <Folder Include="Assets\External\Low_Swordman\Demo\Pallet" />

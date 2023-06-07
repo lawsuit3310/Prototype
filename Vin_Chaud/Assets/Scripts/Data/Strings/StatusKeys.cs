@@ -10,5 +10,6 @@
         public const string PlayerData = "PlayerData";
         public const string Inventory = "Inventory";
         public const string Upgrades = "Upgrades";
+        public const string Date = "Date";
     }
 }

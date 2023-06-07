@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise" />
+  <component name="Encoding" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
+    <file url="file://$USER_HOME$/Downloads/UnitychanSuperCroquetteUrikoVoicePack1.0.1 (1)/UnitychanSuperCroquetteUrikoVoicePack/voices.txt" charset="UTF-8" />
+    <file url="file://$USER_HOME$/Downloads/UnitychanSuperCroquetteUrikoVoicePack1.0.1/UnitychanSuperCroquetteUrikoVoicePack/voices.txt" charset="Shift_JIS" />
+    <file url="file://$USER_HOME$/Downloads/UnitychanSuperUrikoVoicePack/UnitychanSuperUrikoVoicePack_voicelist.txt" charset="Shift_JIS" />
+    <file url="file://$USER_HOME$/Downloads/unitychan_voicepack_append_01/__MACOSX/unitychan_voicepack_append_01/._unitychan_voicepack_140801_voicelist.txt" charset="Shift_JIS" />
+    <file url="file://$USER_HOME$/Downloads/unitychan_voicepack_append_01/unitychan_voicepack_append_01/unitychan_voicepack_140801_voicelist.txt" charset="Shift_JIS" />
+  </component>
 </project>

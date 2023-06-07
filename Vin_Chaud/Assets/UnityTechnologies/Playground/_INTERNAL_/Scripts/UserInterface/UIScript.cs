@@ -243,11 +243,6 @@ public class UIScript : MonoBehaviour
 		Life,
 		Endless
 	}
-
-    public void LoadScene(string _sceneName)
-    {
-        SceneManager.LoadScene(_sceneName );
-    }
 }
 
 

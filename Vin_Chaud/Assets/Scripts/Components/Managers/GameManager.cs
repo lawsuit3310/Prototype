@@ -2,10 +2,12 @@
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
 
 public class GameManager : MonoBehaviour
@@ -14,27 +16,27 @@ public class GameManager : MonoBehaviour
     //private SceneController sc;
     private static StackTrace st;
     private static PlayerDataHandler _playerDataHandler;
-    private static GroceryManager _groceryManager;
     private static GameObject toastMsg;
     [CanBeNull] private static Dictionary<int, int> _inventory;
     [CanBeNull] private static Dictionary<int, int> _alcoholInventory;
     [CanBeNull] private static Dictionary<string, int> _upgrades;
 
-    public static int date = 0;
+    private static GameManager Instance;
 
     private void Awake()
     {
         //만약 이미 게임매니저 오브젝트가 존재하고 있을 경우 자신을 파괴
-        GameObject gm = GameObject.Find("GameManager");
-
-        if (gm != null && gm != this.gameObject)
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
         {
             Destroy(this.gameObject);
         }
 
-        DontDestroyOnLoad(this);
         _playerDataHandler = new PlayerDataHandler();
-        _groceryManager = GameObject.FindWithTag("GROCERYMANAGER").GetComponent<GroceryManager>();
 
         _inventory = GetDataDictionary<int, int>("Inventory");
         _upgrades = GetDataDictionary<string, int>("Upgrades");
@@ -117,7 +119,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            _inventory[key] -= 1;   
+            _inventory[key] -= 1;
+            var _groceryManager = GameObject.FindWithTag("GROCERYMANAGER").GetComponent<GroceryManager>();
             GroceryUI.UpdateGroceryUI(_groceryManager.groceryAmountText);
         }
         ReplaceData();
@@ -218,7 +221,6 @@ public class GameManager : MonoBehaviour
             Debug.Log($"SaveWasFailed : GameManager : {st.GetFrame(0).GetFileLineNumber()}");
         }
     }
-    
     public static void RenewalStatus(char _key)
     {
         RenewalStatus(_key.ToString());
@@ -279,7 +281,6 @@ public class GameManager : MonoBehaviour
         if(!_playerDataHandler.WriteSaveData(data))
             Debug.Log("failed");
     }
-
     public static void RenewalStatus(string _key, int amount)
     {
         
@@ -307,8 +308,6 @@ public class GameManager : MonoBehaviour
         if(!_playerDataHandler.WriteSaveData(data))
             Debug.Log("failed");
     }
-
-    
     public static string GetStatus(string _key)
     {
         var data = _playerDataHandler.GetJObject();
@@ -319,7 +318,6 @@ public class GameManager : MonoBehaviour
         var data = _playerDataHandler.GetJObject();
         return data[StatusKeys.Upgrades][_key].ToString();
     }
-
     public static void ShowToastMessage(string msg)
     {
         toastMsg.GetComponentInChildren<TMP_Text>().text = msg;
@@ -341,5 +339,24 @@ public class GameManager : MonoBehaviour
     public static float CalcUpgradeCost(string Upgrades)
     {
         return CalcUpgradeCost(Convert.ToInt32(Upgrades));
+    }
+    public static void IncreaseDate()
+    {
+        IncreaseDate(1);
+    }
+    public static void IncreaseDate(int amount)
+    {
+        var data = _playerDataHandler.GetJObject();
+
+        data[StatusKeys.PlayerData][StatusKeys.Date] =
+            Convert.ToInt32(data[StatusKeys.PlayerData][StatusKeys.Date]) + amount;
+        _playerDataHandler.WriteSaveData(data);
+    }
+
+    public static void LoadScene(string sceneName)
+    {
+        LoadingSceneManager.CurrentSceneName = SceneManager.GetActiveScene().name;
+        LoadingSceneManager.TargetSceneName = sceneName;
+        SceneManager.LoadScene(SceneName.LoadingScene);
     }
 }

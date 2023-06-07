@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/UnityTechnologies/Playground/Examples/Roguelike/Roguelike.unity
     guid: ad15a26015e49439387b05c22fe7a962
   - enabled: 1
@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Adventure.unity
     guid: 9ab42dd7f7c25f4409c48f4e3d229a27
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: f3a51fe7cbd6cf5468c450374771b00e
   m_configObjects: {}

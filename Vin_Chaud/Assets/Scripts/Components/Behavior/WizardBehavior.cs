@@ -10,13 +10,13 @@ public class WizardBehavior : InteractableBehavior
     
     public static GroceryUI StoreUI;
     private GameObject instance;
-    private ConverseManager _converseManager;
+    private Converse _converse;
     private Rigidbody2D _rigid;
 
     private void Awake()
     {
         StoreUI = GameObject.FindWithTag("GROCERYMANAGER").GetComponent<GroceryUI>();
-        _converseManager = GameObject.FindWithTag("CONVERSEMANAGER").GetComponent<ConverseManager>();
+        _converse = GameObject.FindWithTag("CONVERSEMANAGER").GetComponent<Converse>();
         _rigid = GetComponent<Rigidbody2D>();
     }
 
@@ -111,8 +111,8 @@ public class WizardBehavior : InteractableBehavior
     public override void Interact()
     {
         Time.timeScale = 0;
-        _converseManager.showTextPanel("Wizard", "Text Text");
-        _converseManager.isShowStorePanelEnd = true;
+        _converse.showTextPanel("Wizard", "Text Text");
+        _converse.isShowStorePanelEnd = true;
     }
 }
 

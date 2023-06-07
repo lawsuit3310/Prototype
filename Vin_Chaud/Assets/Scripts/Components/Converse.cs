@@ -1,8 +1,9 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using VinChaud;
 
-public class ConverseManager : MonoBehaviour
+public class Converse : MonoBehaviour
 {
     [SerializeField] private GameObject converseUI;
     [SerializeField] private Image portrait;
@@ -26,6 +27,24 @@ public class ConverseManager : MonoBehaviour
         textUI.text = "Debug Status";
         portrait.gameObject.SetActive(true);
     }
+    
+    public void showTextPanel(Sprite image, string speakerName, string text )
+    {
+        converseUI.SetActive(true);
+        portrait.sprite = image;
+        name.text = speakerName;
+        textUI.text = text;
+        portrait.gameObject.SetActive(true);
+    }
+
+    public void showTextPanel(AWord word)
+    {
+        converseUI.SetActive(true);
+        portrait.sprite = word.portrait;
+        name.text = word.speaker;
+        textUI.text = word.talk;
+        portrait.gameObject.SetActive(true);
+    }
 
     public void disableTextPanel()
     {
@@ -37,5 +56,6 @@ public class ConverseManager : MonoBehaviour
         }
             
     }
+    
 
 }
