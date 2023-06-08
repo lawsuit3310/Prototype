@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,27 +20,26 @@ public class LoadingSceneManager : MonoBehaviour
 
     static IEnumerator LoadSceneProgress()
     {
-        SceneManager.LoadScene(SceneName.LoadingScene);
         op = SceneManager.LoadSceneAsync(TargetSceneName);
         op.allowSceneActivation = false;
 
-        float timer = 0f;
         while (!op.isDone)
         {
             yield return null;
 
             if (op.progress < 0.9f)
             {
-                Debug.Log(op.progress);
             }
             else
             {
-                timer += Time.unscaledDeltaTime;
-                Debug.Log(timer);
-                yield return new WaitForSeconds(5f);
-                op.allowSceneActivation = true;
-                yield break;
+                break;
             }
         }
+
+        for (int i = 0; i < 3; i++)
+        {
+            yield return new WaitForSeconds(1);
+        }
+        op.allowSceneActivation = true;
     }
 }

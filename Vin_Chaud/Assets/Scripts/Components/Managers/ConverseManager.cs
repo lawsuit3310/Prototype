@@ -10,11 +10,11 @@ public class ConverseManager : IDisposable
     private bool disposed = false;
     private List<Dictionary<string, object>> _csvObject;
 
-    public ConverseManager(string path)
+    public ConverseManager(string _fileName)
     {
         //key - head
         //value - 실제 텍스트
-        _csvObject = CSVReader.Read("csv/Converse");
+        _csvObject = CSVReader.Read("csv/" + _fileName);
     }
 
     public void Converse()

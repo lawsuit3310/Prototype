@@ -50,7 +50,7 @@ public class AlcoholScheduler
     public static bool AddSchedule(string breweryID, int index)
     {
         //아이템 갯수가 0개 일경우 메소드 바로 종료
-        if (!GameManager.DecreaseItemAmount(Convert.ToInt32(index)))
+        if (!GameManager.DecreaseItemAmount(Convert.ToInt32(index),5))
         {
             return false;
         }

@@ -12,9 +12,9 @@
     "IS_PROCESSING": true
   },
   "2": {
-    "EndTime": "2023-06-07T13:21:43.8388967Z",
-    "Type": 1,
-    "IS_DONE": true,
-    "IS_PROCESSING": false
+    "EndTime": "2023-06-08T04:40:40.7695773Z",
+    "Type": 0,
+    "IS_DONE": false,
+    "IS_PROCESSING": true
   }
 }
