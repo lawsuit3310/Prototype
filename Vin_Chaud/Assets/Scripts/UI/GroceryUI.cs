@@ -37,14 +37,13 @@ public class GroceryUI : MonoBehaviour
         storePanel.SetActive(false);
     }
 
-    private void RefreshUI()
+    public void RefreshUI()
     {
         //업그레이드 메소드가 호출 되었을 때 기본적으로 실행할 내용
         moneyText.text = GameManager.GetStatus(StatusKeys.Money) + "$";
     }
     public void UpgradeHP()
     {
-        RefreshUI();
         if (Convert.ToInt32(GameManager.GetStatus(StatusKeys.Money)) -
             GameManager.CalcUpgradeCost(
                 Convert.ToInt32(GameManager.GetUpgrades(StatusKeys.HP)) + 1) >= 0)
@@ -53,6 +52,8 @@ public class GroceryUI : MonoBehaviour
             GameManager.RenewalStatus(
                 StatusKeys.Money, Convert.ToInt32(
                     GameManager.CalcUpgradeCost(GameManager.GetUpgrades(StatusKeys.HP))));
+            
+            RefreshUI();
         }
         else
         {
@@ -62,16 +63,16 @@ public class GroceryUI : MonoBehaviour
     }
     public void UpgradeATK()
     {
-        
-        RefreshUI();
         if (Convert.ToInt32(GameManager.GetStatus(StatusKeys.Money)) -
-          GameManager.CalcUpgradeCost(
-              Convert.ToInt32(GameManager.GetUpgrades(StatusKeys.ATK)) + 1) >= 0)
+            GameManager.CalcUpgradeCost(
+                Convert.ToInt32(GameManager.GetUpgrades(StatusKeys.ATK)) + 1) >= 0)
         {
             GameManager.RenewalStatus(StatusKeys.ATK);
             GameManager.RenewalStatus(
                 StatusKeys.Money, Convert.ToInt32(
                     GameManager.CalcUpgradeCost(GameManager.GetUpgrades(StatusKeys.ATK))));
+            
+            RefreshUI();
         }
         else
         {
@@ -82,7 +83,6 @@ public class GroceryUI : MonoBehaviour
 
     public void UpgradeCriticalRate()
     {
-        RefreshUI();
         if (Convert.ToInt32(GameManager.GetStatus(StatusKeys.Money)) -
             GameManager.CalcUpgradeCost(
                 Convert.ToInt32(GameManager.GetUpgrades(StatusKeys.CriticalRate)) + 1) >= 0)
@@ -91,6 +91,8 @@ public class GroceryUI : MonoBehaviour
             GameManager.RenewalStatus(
                 StatusKeys.Money, Convert.ToInt32(
                     GameManager.CalcUpgradeCost(GameManager.GetUpgrades(StatusKeys.CriticalRate))));
+            
+            RefreshUI();
         }
         else
         {

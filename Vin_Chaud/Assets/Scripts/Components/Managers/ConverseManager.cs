@@ -7,7 +7,7 @@ using VinChaud;
 
 public class ConverseManager : IDisposable
 {
-    private bool disposed = false;
+    private static bool disposed = false;
     private List<Dictionary<string, object>> _csvObject;
 
     public ConverseManager(string _fileName)

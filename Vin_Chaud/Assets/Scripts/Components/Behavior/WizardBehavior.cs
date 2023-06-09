@@ -5,16 +5,15 @@ using Random = UnityEngine.Random;
 
 public class WizardBehavior : InteractableBehavior
 {
-    [SerializeField] private GameObject player;
     [SerializeField] private float Speed = 1;
     
     public static GroceryUI StoreUI;
-    private GameObject instance;
     private Converse _converse;
     private Rigidbody2D _rigid;
 
     private void Awake()
     {
+        base.Awake();   
         StoreUI = GameObject.FindWithTag("GROCERYMANAGER").GetComponent<GroceryUI>();
         _converse = GameObject.FindWithTag("CONVERSEMANAGER").GetComponent<Converse>();
         _rigid = GetComponent<Rigidbody2D>();
@@ -23,13 +22,6 @@ public class WizardBehavior : InteractableBehavior
     private void Start()
     {
         StartWandering();
-    }
-
-    private void Update()
-    {
-        base.Update();
-        DistanceChecker();
-        Interactable();
     }
 
     private void AnimationChecker()
@@ -72,39 +64,6 @@ public class WizardBehavior : InteractableBehavior
             _rigid.velocity = absSpeed;
             AnimationChecker();
             yield return new WaitForSeconds(nextTime);
-        }
-    }
-
-    public override void DistanceChecker()
-    {
-        var distance = (player.transform.position - gameObject.transform.position).magnitude;
-        isInteractable = distance < 3.5f;
-    }
-
-    public override void Interactable()
-    {
-        if (this.isInteractable)
-        {
-            var position = this.transform.position;
-            if(Input.GetKeyDown(KeyCode.Z))
-                Interact();
-            if (instance == null)
-            {
-                instance = Instantiate(interactableUi);
-            }
-            else return;
-            instance.SetActive(true);
-            instance.transform.parent = this.gameObject.transform;
-            instance.transform.position =
-                new Vector3() { x = position.x, y = position.y + 0.5f };
-            instance.transform.localScale = 
-                new Vector2()
-                    {
-                        x = this.transform.localScale.x < 0 ?
-                            Mathf.Abs(instance.transform.localScale.x) * -1 :
-                            Mathf.Abs(instance.transform.localScale.x),
-                        y = instance.transform.localScale.y
-                    };
         }
     }
 

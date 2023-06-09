@@ -21,18 +21,10 @@ public class GroundSensor : MonoBehaviour {
     {
     
 
-        if (other.CompareTag("Ground") || other.CompareTag("Block"))
+        if (other.CompareTag("Ground"))
         {
-
-            if (other.CompareTag("Ground"))
-            {
-                m_root.Is_DownJump_GroundCheck = true;
-
-            }
-            else
-            {
-                m_root.Is_DownJump_GroundCheck = false;
-            }
+            
+            m_root.Is_DownJump_GroundCheck = true;
 
             if (m_root.m_rigidbody.velocity.y <= 0)
             {

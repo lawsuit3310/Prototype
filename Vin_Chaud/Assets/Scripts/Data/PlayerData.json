@@ -2,25 +2,25 @@
   "UUID": "83b5229d5d4d6a091a2cdb173576b9ff16d2104a",
   "PlayerData": {
     "Name": "John",
-    "ATK": "11",
+    "ATK": 16,
     "HP": "100",
-    "Money": "180",
+    "Money": 400,
     "CriticalRate": "110",
-    "Date": 16
+    "Date": 17
   },
   "Inventory": {
-    "0": 186,
-    "1": 177,
-    "2": 223
+    "0": 0,
+    "1": 0,
+    "2": 0
   },
   "Upgrades": {
-    "ATK": 7,
-    "HP": 0,
+    "ATK": 12,
+    "HP": 1,
     "CriticalRate": 9
   },
   "Alcohols": {
-    "0": "40",
-    "1": "0",
-    "2": "20"
+    "0": "0",
+    "1": "17",
+    "2": "44"
   }
 }

@@ -17,7 +17,7 @@ public class Sword : MonoBehaviour
             if (!GetComponentInParent<Animator>().GetBool("isAttacking")) return;
             //적과 충돌한 것이 아닐경우 종료
             if (!other.gameObject.CompareTag("Enemy")) return;
-            
+
             var healthSystem = other.gameObject.GetComponent<EnemyHealthSystemAttribute>();
             healthSystem.ModifyHealth(ATK * -1);
         }

@@ -5,20 +5,20 @@ using UnityEngine;
 
 public abstract class InteractableBehavior : MonoBehaviour
 {
-    
+    protected static GameObject Player;
     public GameObject interactableUi;
+    protected GameObject Instance;
     public bool isInteractable = false;
-    public float[] limitPos = {0,0}; 
-    public abstract void DistanceChecker();
-    public abstract void Interactable();
-    public abstract void Interact();
+    public float[] limitPos = {0,0};
+    protected float InteractDistance = 2.5f;
 
-    protected void Update()
+    public virtual void DistanceChecker()
     {
-        Restriction();
+        var distance = (Player.transform.position - gameObject.transform.position).magnitude;
+        isInteractable = distance < InteractDistance;
     }
 
-    private void Restriction()
+    public virtual void Restriction()
     {
         if (this.transform.position.x < limitPos[0] || this.transform.position.x > limitPos[1])
         {
@@ -29,4 +29,44 @@ public abstract class InteractableBehavior : MonoBehaviour
             };
         }
     }
+    public virtual void Interactable()
+    {
+        if (this.isInteractable)
+        {
+            var position = this.transform.position;
+            if(Input.GetKeyDown(KeyCode.Z))
+                Interact();
+            if (Instance == null)
+            {
+                Instance = Instantiate(interactableUi);
+            }
+            else return;
+            Instance.SetActive(true);
+            Instance.transform.parent = this.gameObject.transform;
+            Instance.transform.position =
+                new Vector3() { x = position.x, y = position.y + 0.5f };
+            Instance.transform.localScale = 
+                new Vector2()
+                {
+                    x = this.transform.localScale.x < 0 ?
+                        Mathf.Abs(Instance.transform.localScale.x) * -1 :
+                        Mathf.Abs(Instance.transform.localScale.x),
+                    y = Instance.transform.localScale.y
+                };
+        }
+    }
+    public abstract void Interact();
+
+    protected void Awake()
+    {
+        Player = GameObject.FindWithTag("Player");
+    }
+
+    protected void Update()
+    {
+        Restriction();
+        DistanceChecker();
+        Interactable();
+    }
+
 }

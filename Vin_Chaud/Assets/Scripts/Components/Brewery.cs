@@ -7,22 +7,17 @@ using UnityEngine;
 [AddComponentMenu("Brewery")]
 public class Brewery : InteractableBehavior
 {
-    [SerializeField] private GameObject player;
     [SerializeField] private int breweryID = 0;
-
-    private GameObject instance;
-
     private static BrewryManager _brewryManager;
     // Start is called before the first frame update
     private void Awake()
     {
+        base.Awake();
         _brewryManager = this.transform.parent.GetComponent<BrewryManager>();
     }
 
     private void FixedUpdate()
     {
-        DistanceChecker();
-        Interactable();
         if (AlcoholScheduler.IsScheduleDone(breweryID) || AlcoholScheduler.IsScheduleProcessing(breweryID))
         _brewryManager.ShowProgressUI(this);
     }
@@ -35,7 +30,7 @@ public class Brewery : InteractableBehavior
     // Update is called once per frame
     public override void DistanceChecker()
     {
-        var distance = (player.transform.position - gameObject.transform.position).magnitude;
+        var distance = (Player.transform.position - gameObject.transform.position).magnitude;
         this.isInteractable = distance < 2.5f && !AlcoholScheduler.IsScheduleProcessing(breweryID);
     }
 
@@ -48,22 +43,22 @@ public class Brewery : InteractableBehavior
                 Interact();
             
             //instance가 null인지 체크
-            if (instance == null)
+            if (Instance == null)
             {
-                instance = Instantiate(interactableUi);
+                Instance = Instantiate(interactableUi);
             }
             else return;
-            instance.SetActive(true);
-            instance.transform.parent = this.gameObject.transform;
-            instance.transform.position =
+            Instance.SetActive(true);
+            Instance.transform.parent = this.gameObject.transform;
+            Instance.transform.position =
                 new Vector3() { x = position.x, y = position.y + 0.5f };
-            instance.transform.localScale = 
+            Instance.transform.localScale = 
                 new Vector2()
                 {
                     x = this.transform.localScale.x < 0 ?
-                        Mathf.Abs(instance.transform.localScale.x) * -1 :
-                        Mathf.Abs(instance.transform.localScale.x),
-                    y = instance.transform.localScale.y
+                        Mathf.Abs(Instance.transform.localScale.x) * -1 :
+                        Mathf.Abs(Instance.transform.localScale.x),
+                    y = Instance.transform.localScale.y
                 };
         }
     }
@@ -77,7 +72,6 @@ public class Brewery : InteractableBehavior
         }
         else
         {
-            
             _brewryManager.ShowBreweryUI(breweryID);
         }
     }

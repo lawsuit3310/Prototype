@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 58000012085053012}
   - component: {fileID: 50000010985935070}
   - component: {fileID: 114000010051043158}
-  - component: {fileID: 6715339136946906024}
   - component: {fileID: 2425450957695051191}
   - component: {fileID: 1706925382752329341}
   m_Layer: 0
@@ -140,25 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyWhenActivated: 0
-  healthChange: -5
---- !u!114 &6715339136946906024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000011117960554}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4330d34abf50140d5bad3d3b0608cca2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbody2D: {fileID: 0}
-  gatherableItemId: 2
-  target: {fileID: 0}
-  speed: 0.3
-  lookAtTarget: 0
-  useSide: 0
+  healthChange: -10
 --- !u!114 &2425450957695051191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9610ca9f04fa2b41999586ae5535e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 4
 --- !u!114 &1706925382752329341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +167,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 0}
   gatherableItemId: 2
-  target: {fileID: 0}
   speed: 1
   lookAtTarget: 0
   useSide: 0

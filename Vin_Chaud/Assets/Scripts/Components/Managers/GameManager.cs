@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         _upgrades = GetDataDictionary<string, int>("Upgrades");
         _alcoholInventory = GetDataDictionary<int, int>("Alcohols");
 
-        toastMsg = Instantiate(Resources.Load<GameObject>("ToastMsg"));
+        toastMsg = Instantiate(Resources.Load<GameObject>("Prefabs/ToastMsg"));
         toastMsg.SetActive(false);
 
         ReplaceData();
@@ -352,7 +352,14 @@ public class GameManager : MonoBehaviour
             Convert.ToInt32(data[StatusKeys.PlayerData][StatusKeys.Date]) + amount;
         _playerDataHandler.WriteSaveData(data);
     }
+    public static void IncreaseMoney(int amount)
+    {
+        var data = _playerDataHandler.GetJObject();
 
+        data[StatusKeys.PlayerData][StatusKeys.Money] =
+            Convert.ToInt32(data[StatusKeys.PlayerData][StatusKeys.Money]) + amount;
+        _playerDataHandler.WriteSaveData(data);
+    }
     public static void LoadScene(string sceneName)
     {
         LoadingSceneManager.CurrentSceneName = SceneManager.GetActiveScene().name;

@@ -8,6 +8,7 @@ public class HealthSystemAttribute : MonoBehaviour
 
 	private UIScript _ui;
     private Collider2D _collider;
+    private PlayerBehavior _playerBehavior;
     private SpriteRenderer _sprite;
 	private int _maxHealth;
 
@@ -23,28 +24,7 @@ public class HealthSystemAttribute : MonoBehaviour
 		// Find the UI in the scene and store a reference for later use
         _ui = GameObject.FindObjectOfType<UIScript>();
         _collider = this.gameObject.GetComponent<BoxCollider2D>();
-        Debug.Log(_collider.gameObject.name);
-
-		// Set the player number based on the GameObject tag
-		switch(gameObject.tag)
-		{
-			case "Player":
-				_playerNumber = 0;
-				break;
-			case "Player2":
-				_playerNumber = 1;
-				break;
-			default:
-				_playerNumber = -1;
-				break;
-		}
-
-		// Notify the UI so it will show the right initial amount
-		if(_ui != null
-			&& _playerNumber != -1)
-		{
-			_ui.SetHealth(health, _playerNumber);
-		}
+        _playerBehavior = GetComponent<PlayerBehavior>();
 
         health = PlayerData.GetMaxHP();
 		_maxHealth = health; //note down the maximum health to avoid going over it when the player gets healed
@@ -75,6 +55,7 @@ public class HealthSystemAttribute : MonoBehaviour
 		//DEAD
 		if(health <= 0)
         {
+            MonsterSpawner.Bleed(_playerBehavior);
 			Destroy(gameObject);
 		}
 
